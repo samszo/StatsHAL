@@ -1,3 +1,4 @@
+//https://github.com/iDataVisualizationLab/WordStream
 (function (window) {
     window.wordstream = function (svg, data, config) {
         d3.wordstreamLayout = function () {
@@ -23,11 +24,13 @@
             let maxSud, minSud, maxFreq, minFreq;
 
             wordstream.boxes = function () {
+                /*montre tout les mots
                 data.forEach(d => {
                     categories.forEach(topic => {
                         d.words[topic].splice(topWord)
                     })
                 });
+                */
                 let boxWidth = size[0] / data.length;
                 buildFontScale(data);
                 buildFrequencyScale(data);
@@ -631,14 +634,16 @@
                 legendFont = config.legendFont,
                 curve = config.curve;
 
-            const color = d3.scaleOrdinal(d3.schemeCategory10);
+            const color = d3.scaleSequential(d3.interpolateSpectral).domain([0, data.length-1]);
             const axisPadding = 10;
             const legendOffset = 10;
             const margins = {left: 20, top: 20, right: 10, bottom: 30};
             const font = "Arial";
 
             let opacity, maxFreq, minFreq;
-            let categories = Object.keys(data[0].words);//d3.keys(data[0].words);
+            //les catagories peuvent changer suivant les docs
+            //let categories = Object.keys(data[0].words);//d3.keys(data[0].words);
+            let categories = getCategories(data);
             let axisGroup = svg.append('g').attr("id", "axisGroup");
             let xGridlinesGroup = svg.append('g').attr("id", "xGridlinesGroup");
             let mainGroup = svg.append('g').attr("id", "main");
@@ -941,6 +946,17 @@
                     .attr("stroke-width", 0.7)
                     .attr("stroke", 'lightgray');
             }
+            function getCategories(data){
+                let cat = [], keys;
+                data.forEach(d=>{
+                    keys = Object.keys(d.words);
+                    keys.forEach(k=>{
+                        if(!cat.includes(k))cat.push(k); 
+                    })
+                })
+                return cat;
+            }
+
         })(data);
         return window.wordstream;
     }
