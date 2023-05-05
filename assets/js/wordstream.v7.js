@@ -24,13 +24,11 @@
             let maxSud, minSud, maxFreq, minFreq;
 
             wordstream.boxes = function () {
-                /*montre tout les mots
                 data.forEach(d => {
                     categories.forEach(topic => {
                         d.words[topic].splice(topWord)
                     })
                 });
-                */
                 let boxWidth = size[0] / data.length;
                 buildFontScale(data);
                 buildFrequencyScale(data);
@@ -636,7 +634,7 @@
 
             const color = d3.scaleSequential(d3.interpolateSpectral).domain([0, data.length-1]);
             const axisPadding = 10;
-            const legendOffset = 10;
+            const legendOffset = 12;
             const margins = {left: 20, top: 20, right: 10, bottom: 30};
             const font = "Arial";
 
@@ -904,23 +902,28 @@
             });
 
             //Build the legends
-            legendGroup.attr('transform', 'translate(' + margins.left + ',' + (height + margins.top + legendOffset) + ')');
+            //
+            let legendTop = boxes.topics.length * legendFont;
+            legendGroup.attr('transform', 'translate(' + margins.left + ',' + (height + margins.top - legendTop) + ')');
+            //
+            //legendGroup.attr('transform', 'translate(' + margins.left + ',' + (height + margins.top + legendOffset) + ')');
             let legendNodes = legendGroup.selectAll('g').data(boxes.topics).enter().append('g')
                 .attr('transform', function (d, i) {
-                    return 'translate(' + 10 + ',' + (i * legendFont) + ')';
+                    return 'translate(' + legendFont + ',' + (i * legendFont*1.5) + ')';
                 });
             legendNodes.append('circle')
-                .attr("r", 5)
+                .attr("r", legendFont/2)
                 .attr("fill", (d, i) => color(i))
                 .attr('fill-opacity', 1)
                 .attr("stroke", "black")
-                .attr("stroke-width", 0.5);
+                .attr("stroke-width", 0);
 
             legendNodes.append('text')
                 .text(d => d)
                 .attr('font-size', legendFont)
-                .attr('alignment-baseline', "middle")
-                .attr("dx", 8);
+                .attr('dy', legendFont/2)
+                .attr('fill','white')
+                .attr("dx", legendFont);
 
             function styleAxis(axisNodes) {
                 axisNodes.selectAll('.domain')
@@ -932,6 +935,7 @@
                     .attr("stroke-opacity", 0);
 
                 axisNodes.selectAll('.tick text')
+                    .attr('fill', 'white')
                     .attr('font-family', 'serif')
                     .attr('font-size', tickFont);
             }

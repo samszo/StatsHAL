@@ -28,11 +28,13 @@ d3.json(uri).then(data=>{
     */
     dataForVis = getDataForVis(data.response.docs);
     let w = window.innerWidth-margins.l-margins.r, h = window.innerHeight - margins.t - margins.b;
-    d3.select("#canvas").style("max-width", w + "px");    
-    svg.attr("width", Math.min(120 * dataForVis.length, w))
-    svg.attr("height", Math.min(200 * Object.keys(dataForVis[0].words).length, h));
+    d3.select("#canvas")
+        .style("max-width", w + "px")
+        .style("background-color","black");    
+    svg.attr("width", Math.max(120 * dataForVis.length, w))
+    svg.attr("height", Math.max(200 * Object.keys(dataForVis[0].words).length, h));
     wordstream(svg, dataForVis, config);
-
+    hideLoader();
 
 });
 function getDataForVis(data){
@@ -53,12 +55,15 @@ function getDataForVis(data){
         let o = {'date':date,'words':JSON.parse(JSON.stringify(wCat)),'docs':[]};
         docs.forEach(d=>{
             o.docs.push(d);
+            if(!d.authIdHal_s)d.authIdHal_s=["No IdHal"];
             d.authIdHal_s.forEach(ka=>{
-                if(d.keyword_s) d.keyword_s.forEach(kw=>setWord(kw,o,date,'keywords for '+ka,d,3));
+                if(d.keyword_s) d.keyword_s.forEach(kw=>{
+                    if(kw)setWord(kw,o,date,'keywords for '+ka,d,3)
+                });
                 let ekw = nlp(cleanText(d.title_s.join())),
                 terms = ekw.terms().json();
                 terms.forEach(t=>{
-                    setWord(t.text,o,date,'keywords for '+ka,d);
+                    if(t.text)setWord(t.text,o,date,'keywords for '+ka,d);
                 })    
             })
         })
@@ -67,7 +72,7 @@ function getDataForVis(data){
     return dataForVis;
 }
 function getWordCat(data){
-    let w={}, cat = d3.group(data, d => d.authIdHal_s);
+    let w={}, cat = d3.group(data, d => d.authIdHal_s ? d.authIdHal_s : ["No IdHal"]);
     cat.forEach((v,k)=>{
         k.forEach(a=>{
             if(!w['keywords for '+a]){
@@ -83,7 +88,7 @@ function cleanText(t){
     .replace(/.’/, '')
     .replace(/.'/, '')
     .replace(/.’/, '')               
-    .replace(/[.,\/#!,«»$%\^&\*;:{}=\-_`~()]/mg," ")
+    .replace(/[.,\/#!,«»$%\^&\*;:{}=\-_`~()"َّ"]/mg," ")
     .replace(/\.\s+|\n|\r|\0/mg,' ')
     .replace(/\s-+\s/mg,' ')
     .replace(/[©|]\s?/mg,' ')
@@ -96,7 +101,7 @@ function cleanText(t){
 }
 
 function setWord(w,o,k,t,d,p=1){
-    console.log(t);
+    //console.log(t);
     let fi, aw = o.words[t].filter(d=>d.text==w);
     if(aw.length==0){
         fi = words.findIndex(d=>d==w);
@@ -107,4 +112,10 @@ function setWord(w,o,k,t,d,p=1){
         o.words[t].push({frequency: 1,id: k+"_"+t+"_"+fi,text:w,topic:t,'d':d})
     }else
         aw[0].frequency = aw[0].frequency+(1*p);
+}
+function showLoader() {
+	d3.select("#ws-loading").style("display", "inline-block")
+}
+function hideLoader() {
+	d3.select("#ws-loading").style("display", "none")
 }
