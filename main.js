@@ -31,8 +31,8 @@ d3.json(uri).then(data=>{
     d3.select("#canvas")
         .style("max-width", w + "px")
         .style("background-color","black");    
-    svg.attr("width", Math.max(120 * dataForVis.length, w))
-    svg.attr("height", Math.max(200 * Object.keys(dataForVis[0].words).length, h));
+    svg.attr("width", Math.min(120 * dataForVis.length, w))
+    svg.attr("height", Math.min(200 * Object.keys(dataForVis[0].words).length, h));
     wordstream(svg, dataForVis, config);
     hideLoader();
 
