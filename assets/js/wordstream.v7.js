@@ -632,20 +632,32 @@
                 legendFont = config.legendFont,
                 curve = config.curve;
 
-            const color = d3.scaleSequential(d3.interpolateSpectral).domain([0, data.length-1]);
+            const color = d3.scaleSequential(d3.interpolateSpectral).domain([0, Object.keys(data[0].words).length-1]);
             const axisPadding = 10;
             const legendOffset = 12;
             const margins = {left: 20, top: 20, right: 10, bottom: 30};
             const font = "Arial";
 
+            //ATTENTION le zoom doit être gérer au niveau des paths de relation pour qu'ils soient cohérent
+            let container = svg.append("g");
+            svg.call(
+                d3.zoom()
+                    //.scaleExtent([.1, planExtent])
+                    .on('zoom', (event) => {
+                        container.attr('transform', event.transform);
+                        })                        
+            );
+            //
+            //let container = svg;
+        
             let opacity, maxFreq, minFreq;
             //les catagories peuvent changer suivant les docs
             //let categories = Object.keys(data[0].words);//d3.keys(data[0].words);
             let categories = getCategories(data);
-            let axisGroup = svg.append('g').attr("id", "axisGroup");
-            let xGridlinesGroup = svg.append('g').attr("id", "xGridlinesGroup");
-            let mainGroup = svg.append('g').attr("id", "main");
-            let legendGroup = svg.append('g').attr("id", "legend");
+            let axisGroup = container.append('g').attr("id", "axisGroup");
+            let xGridlinesGroup = container.append('g').attr("id", "xGridlinesGroup");
+            let mainGroup = container.append('g').attr("id", "main");
+            let legendGroup = container.append('g').attr("id", "legend");
             let legendHeight = categories.length * legendFont;
             let width = globalWidth - (margins.left + margins.top);
             let height = globalHeight - (+margins.top + margins.bottom + axisPadding + legendHeight);
@@ -819,6 +831,10 @@
             });
             //Click
             mainGroup.selectAll('.textData').on('click', function () {
+                //gestion du zoom
+                let contTrans = container.attr('transform');
+                container.attr('transform','');
+
                 let thisText = d3.select(this);
                 let text = thisText.text();
                 let topic = thisText.attr('topic');
@@ -882,6 +898,9 @@
                     return t && !t.cloned && t.topic === topic;
                 });
                 allOtherTexts.attr('visibility', 'hidden');
+
+                container.attr('transform',contTrans);
+
             });
             categories.forEach(topic => {
                 d3.select("path[topic='" + topic + "']").on('click', function () {

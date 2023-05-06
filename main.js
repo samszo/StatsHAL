@@ -13,7 +13,8 @@ let dataForVis = [], words=[], svg = d3.select("#canvas").append('svg').attr("id
     dateField= 'publicationDate_s',
     pUrl = new appUrl({'url':new URL(document.location)}),
     q = pUrl.params && pUrl.params.has('q') ? pUrl.params.get('q') : 'authIdHal_s:samuel-szoniecky',
-    uri = "https://api.archives-ouvertes.fr/search/?q="+q
+    fq = pUrl.params && pUrl.params.has('fq') ? pUrl.params.get('fq') : 'publicationDate_s:[2018 TO 2023]',
+    uri = "https://api.archives-ouvertes.fr/search/?q="+q+"&fq="+fq
         +"&rows=10000"
         +"&fl=authIdHal_s,keyword_s,title_s,docid,uri_s,producedDate_s,publicationDate_s"
         +"&sort="+dateField+" asc";
@@ -31,8 +32,9 @@ d3.json(uri).then(data=>{
     d3.select("#canvas")
         .style("max-width", w + "px")
         .style("background-color","black");    
-    svg.attr("width", Math.min(120 * dataForVis.length, w))
-    svg.attr("height", Math.min(200 * Object.keys(dataForVis[0].words).length, h));
+    svg.attr("width", Math.max(120 * dataForVis.length, w))
+    svg.attr("height", Math.max(200 * Object.keys(dataForVis[0].words).length, h));
+
     wordstream(svg, dataForVis, config);
     hideLoader();
 
