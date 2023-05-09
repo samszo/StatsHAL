@@ -41,23 +41,24 @@ d3.json(uri).then(data=>{
 });
 function getDataForVis(data){
     dataForVis=[];
-    /*
-    let g = d3.nest()
-        .key(function(d){
-            return d.producedDate_s.split('-')[0];
-        })
-        .entries(data);
-    g.forEach(date=>{
-        let o = {'date':date.key,'words':{'keyword':[],'title':[]},'docs':[]};
-        date.values.forEach(d=>{
-    */
+    //regroupement par année
     let g = d3.group(data, d => d[dateField].split('-')[0]),
-        wCat = getWordCat(data);
+    //création des catégories
+    typeCat = 'keywords & authors',//"words for each author"
+    wCat = getWordCat(data,typeCat);
     g.forEach((docs,date)=>{
         let o = {'date':date,'words':JSON.parse(JSON.stringify(wCat)),'docs':[]};
         docs.forEach(d=>{
             o.docs.push(d);
             if(!d.authIdHal_s)d.authIdHal_s=["No IdHal"];
+            switch (typeCat) {
+                case "words for each author":
+                    
+                    break;
+            
+                default:
+                    break;
+            }
             d.authIdHal_s.forEach(ka=>{
                 if(d.keyword_s) d.keyword_s.forEach(kw=>{
                     if(kw)setWord(kw,o,date,'keywords for '+ka,d,3)
@@ -73,16 +74,24 @@ function getDataForVis(data){
     })
     return dataForVis;
 }
-function getWordCat(data){
-    let w={}, cat = d3.group(data, d => d.authIdHal_s ? d.authIdHal_s : ["No IdHal"]);
-    cat.forEach((v,k)=>{
-        k.forEach(a=>{
-            if(!w['keywords for '+a]){
-                w['keywords for '+a]=[];
-                //w['title for '+a]=[];        
-            }
-        });
-    });
+function getWordCat(data,type){
+    let w={}, cat; 
+    switch (type) {
+        case "words for each author":
+            cat = d3.group(data, d => d.authIdHal_s ? d.authIdHal_s : ["No IdHal"]);            
+            cat.forEach((v,k)=>{
+                k.forEach(a=>{
+                    if(!w['keywords for '+a]){
+                        w['keywords for '+a]=[];
+                    }
+                });
+            });
+            break;    
+        case "keywords & authors":
+        default:
+            w = {'keywords':[],'authors':[]};
+        break;
+    }
     return w;
 }
 function cleanText(t){
