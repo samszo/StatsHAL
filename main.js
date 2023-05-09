@@ -43,6 +43,7 @@ d3.json(uri).then(data=>{
 function getDataForVis(data){
     dataForVis=[];
     //regroupement par année
+    //regroupement par année
     let g = d3.group(data, d => d[dateField].split('-')[0]),
     //création des catégories
     typeCat = 'keywords & authors',//"words for each author"
