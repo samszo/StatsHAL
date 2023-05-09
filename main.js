@@ -43,6 +43,7 @@ d3.json(uri).then(data=>{
 function getDataForVis(data){
     dataForVis=[];
     //regroupement par année
+    //regroupement par année
     let g = d3.group(data, d => d[dateField].split('-')[0]),
     //création des catégories
     typeCat = 'keywords & authors',//"words for each author"
@@ -80,7 +81,7 @@ function getKeywords(d,o,k){
     })    
 }
 function getAuthors(d,o){
-    let fi, k = o.date, a;
+    let fi, frq = 6, k = o.date, a;
     if(!d.authIdHal_s){
         ka = 'No IdHal';
         fi = authors.findIndex(d=>d==ka);
@@ -88,7 +89,7 @@ function getAuthors(d,o){
             authors.push(ka);
             fi = (authors.length-1);
         }
-        o.words['authors'].push({frequency: 1,id: k+"_"+ka+"_"+fi,text:ka,topic:'authors','d':d})
+        o.words['authors'].push({frequency: frq,id: k+"_"+ka+"_"+fi,text:ka,topic:'authors','d':d})
     }else{
         d.authIdHal_s.forEach(ka=>{
             a = o.words['authors'].filter(d=>d.text==ka);
@@ -98,7 +99,7 @@ function getAuthors(d,o){
                     authors.push(ka);
                     fi = (authors.length-1);
                 }
-                o.words['authors'].push({frequency: 1,id: k+"_"+ka+"_"+fi,text:ka,topic:'authors','d':d})
+                o.words['authors'].push({frequency: frq,id: k+"_"+ka+"_"+fi,text:ka,topic:'authors','d':d})
             }else
                 a[0].frequency = a[0].frequency+1;
         })
