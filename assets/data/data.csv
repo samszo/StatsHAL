@@ -1,0 +1,143 @@
+country,code,frenchCountry,score
+Afghanistan,AF,Afghanistan,45
+Albania,AL,Albanie,78
+Armenia,AM,Arménie,78
+Argentina,AR,Argentine,63
+Austria,AT,Autriche,88
+Australia,AU,Australie,82
+Azerbaijan,AZ,Azerbaïdjan,85
+Bosnia and Herzegovina,BA,Bosnie-Herzégovine,80
+Bangladesh,BD,Bangladesh,82
+Belgium,BE,Belgique,83
+Burkina Faso,BF,Burkina Faso,73
+Bulgaria,BG,Bulgarie,77
+Benin,BJ,Bénin,71
+Bolivia (Plurinational State of),BO,Bolivie,61
+Brazil,BR,Brésil,63
+Botswana,BW,Botswana,61
+Belarus,BY,Bélarus,77
+Canada,CA,Canada,90
+Congo (Democratic Republic of the),CD,République Démocratique du Congo,65
+Central African Republic,CF,République Centrafricaine,68
+Congo,CG,République du Congo,66
+Switzerland,CH,Suisse,90
+Chile,CL,Chili,69
+Cameroon,CM,Cameroun,65
+China,CN,Chine,88
+Colombia,CO,Colombie,64
+Costa Rica,CR,Costa Rica,70
+Côte d'Ivoire,CR,Costa Rica,67
+Cyprus,CY,Chypre,80
+Czechia,CZ,République Tchèque,84
+Germany,DE,Allemagne,85
+Denmark,DK,Danemark,88
+Dominican Republic,DO,République Dominicaine,60
+Algeria,DZ,Algérie,79
+Ecuador,EC,Equateur,71
+Estonia,EE,Estonie,83
+Egypt,EG,Egypte,88
+Spain,ES,Espagne,85
+Ethiopia,ET,Ethiopie,79
+Finland,FI,Finlande,93
+France,FR,France,84
+Gabon,GA,Gabon,55
+United Kingdom of Great Britain and Northern Ireland,GB,Royaume-Uni,86
+Georgia,GE,Géorgie,87
+Ghana,GH,Ghana,66
+Gambia,GM,Gambie,70
+Guinea,GN,Guinée,68
+Greece,GR,Grèce,74
+Guatemala,GT,Guatemala,71
+Hong Kong,HK,Hong-Kong,91
+Honduras,HN,Honduras,72
+Croatia,HR,Croatie,82
+Haiti,HT,Haïti,68
+Hungary,HU,Hongrie,81
+Indonesia,ID,Indonésie,89
+Ireland,IE,Irlande,86
+Israel,IL,Israël,82
+India,IN,Inde,85
+Iraq,IQ,Iraq,71
+Iran (Islamic Republic of),IR,République Islamique d'Iran,82
+Iceland,IS,Islande,93
+Italy,IT,Italie,78
+Jamaica,JM,Jamaïque,73
+Jordan,JO,Jordanie,86
+Japan,JP,Japon,85
+Kenya,KE,Kenya,70
+Kyrgyzstan,KG,Kirghizistan,73
+Cambodia,KH,Cambodge,80
+Korea (Democratic People's Republic of),KP,République Populaire Démocratique de Corée,82
+Kosovo,KR,République de Corée,86
+Kazakhstan,KZ,Kazakhstan,79
+Laos,LA,République Démocratique Populaire Lao,83
+Lebanon,LB,Liban,78
+Sri Lanka,LK,Sri Lanka,82
+Liberia,LR,Libéria,56
+Lesotho,LS,Lesotho,71
+Lithuania,LT,Lituanie,79
+Luxembourg,LU,Luxembourg,88
+Latvia,LV,Lettonie,76
+Libya,LY,Libye,67
+Morocco,MA,Maroc,81
+Moldova (Republic of),MD,République de Moldova,67
+Montenegro,ME,République de Moldova,79
+Madagascar,MG,Madagascar,64
+Macedonia (the former Yugoslav Republic of),MK,L'ex-République Yougoslave de Macédoine,78
+Mali,ML,Mali,66
+Myanmar,MM,Myanmar,85
+Mongolia,MN,Mongolie,70
+Mauritania,MR,Mauritanie,63
+Malta,MT,Malte,86
+Mauritius,MU,Maurice,82
+Malawi,MW,Malawi,64
+Mexico,MX,Mexique,58
+Mozambique,MZ,Mozambique,71
+Namibia,NA,Namibie,65
+Niger,NE,Niger,74
+Nigeria,NG,Nigéria,66
+Nicaragua,NI,Nicaragua,73
+Netherlands,NL,Pays-Bas,88
+Norway,NO,Norvège,93
+Nepal,NP,Népal,78
+New Zealand,NZ,Nouvelle-Zélande,83
+Panama,PA,Panama,72
+Peru,PE,Pérou,63
+Philippines,PH,Philippines,82
+Pakistan,PK,Pakistan,74
+Poland,PL,Pologne,82
+Palestine (State of),PS,Territoire Palestinien Occupé,72
+Portugal,PT,Portugal,87
+Paraguay,PY,Paraguay,70
+Romania,RO,Roumanie,82
+Serbia,RS,Roumanie,82
+Russian Federation,RU,Fédération de Russie,70
+Rwanda,RW,Rwanda,83
+Sweden,SE,Suède,84
+Singapore,SG,Singapour,97
+Slovenia,SI,Slovénie,88
+Slovakia,SK,Slovaquie,83
+Sierra Leone,SL,Sierra Leone,61
+Senegal,SN,Sénégal,69
+South Sudan,SS,Suriname,54
+El Salvador,SV,El Salvador,67
+Chad,TD,Tchad,64
+Togo,TG,Togo,69
+Thailand,TH,Thaïlande,80
+Tajikistan,TJ,Tadjikistan,85
+Turkmenistan,TM,Turkménistan,87
+Tunisia,TN,Tunisie,75
+Turkey,TR,Turquie,77
+Trinidad and Tobago,TT,Trinité-et-Tobago,68
+Taiwan (Province of China[a]),TW,Taïwan,84
+Tanzania (United Republic of),TZ,République-Unie de Tanzanie,77
+Ukraine,UA,Ukraine,69
+Uganda,UG,Ouganda,62
+United States of America,US,Etats-Unis,84
+Uruguay,UY,Uruguay,71
+Uzbekistan,UZ,Ouzbékistan,91
+Venezuela,VE,Venezuela,44
+Yemen,YE,Yémen,71
+South Africa,ZA,Afrique du Sud,58
+Zambia,ZM,Zambie,62
+Zimbabwe,ZW,Zimbabwe,73
