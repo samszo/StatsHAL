@@ -15,16 +15,25 @@ function main() {
         yScale = d3.scaleLinear().range([height, 0]);
 
     var g = svg.append("g").attr("transform", "translate(100, 100)");   
-
     d3.csv("data.csv").then(function(data){
+        //nettoyage - formatage des données
+        data.forEach(d=>{
+            d.Membre=parseInt(d.Membre);
+        })
+
         xScale.domain(data.map(function(d){ return d.Grade; }));
         yScale.domain([0, d3.max(data, function(d){ return d.Membre; })]);
 
         g.append("g").attr('transform', 'translate(0,'+height+')')
-            .call(d3.axisBottom(xScale));
+            .call(d3.axisBottom(xScale))
+            .selectAll("text")  
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", "rotate(-65)");
         
         g.append("g").call(d3.axisLeft(yScale).tickFormat(function(d){
-            return "membre" + d;
+            return d;
         }).ticks(6));
 
         g.selectAll(".bar")
