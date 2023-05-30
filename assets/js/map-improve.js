@@ -53,10 +53,18 @@ function mapImprove() {
         scores.forEach(s=>s.score=0);
         for (let i = 0; i < pays.length; i++) {
             let nb = pays[i+1],
-            p = scores.filter(s=>s.code==pays[i].toUpperCase());
-            if(p.length)p[0].score=nb;
+            p = scores.filter((s,j)=>s.code==pays[i].toUpperCase());
+            //ne pas prendre en compte les données de la France 
+            //afin de liser les statistiques 
+            if(p.length){
+                if(pays[i]!='fr')p[0].score=nb;
+            }
             i++;            
         }
+        //supprime les pays à 0
+        //scores.forEach((s,i)=>{if(s.score==0)delete scores[i];});
+        //réindex le tableau
+        //scores = scores.filter(s=>s);
         var b  = path.bounds(geojson),
             s = .80 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
             t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
