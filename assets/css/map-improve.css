@@ -1,8 +1,8 @@
 .svg {
     display: block;
     margin: auto;
-    background: #222b1d;
-    color: #bebebe;
+    background: #3e3030;
+    color: #ada0a0;
     font-family: "Lucida Console", Monaco, monospace;
 }
     
@@ -15,13 +15,13 @@
 }
 
 .axis line {
-    stroke: #c1d3b8;
+    stroke: #d3b8b8;
 }
 
 .axis path {
-    stroke: #c1d3b8;
+    stroke: #c77979;
 }
 
 .axis text {
-    fill: #c1d3b8;
+    fill: #d3b8b8;
 }
