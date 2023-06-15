@@ -1,26 +1,26 @@
-.department {
+.region {
     cursor: pointer;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke: black;
-    stroke-width: .5px;
+    stroke-width: 0.5px;
 }
 
-.department:hover {
+.region:hover {
     stroke-width: 2px;
 }
 
 div.chart-tooltip {
     position: absolute;
-    opacity:0.8;
-    z-index:1000;
-    text-align:left;
-    border-radius:4px;
-    -moz-border-radius:4px;
-    -webkit-border-radius:4px;
-    padding:8px;
-    color:#fff;
-    background-color:#000;
+    opacity: 0.8;
+    z-index: 1000;
+    text-align: left;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 8px;
+    color: #fff;
+    background-color: #000;
     font: 12px sans-serif;
     max-width: 300px;
     height: 60px;
@@ -34,4 +34,40 @@ div.chart-tooltip {
 .select-field {
     margin-top: -3rem;
     margin-bottom: 5rem;
+}
+
+.q0-9 {
+    fill: #f9e5e5; 
+}
+
+.q1-9 {
+    fill: #eccccc; 
+}
+
+.q2-9 {
+    fill: #d89999; 
+}
+
+.q3-9 {
+    fill: #c26666; 
+}
+
+.q4-9 {
+    fill: #ae4141; 
+}
+
+.q5-9 {
+    fill: #8b2323; 
+}
+
+.q6-9 {
+    fill: #6d0000; 
+}
+
+.q7-9 {
+    fill: #440000; 
+}
+
+.q8-9 {
+    fill: #1c0000; 
 }
