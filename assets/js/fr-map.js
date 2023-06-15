@@ -25,8 +25,8 @@ function mapCollaborations() {
   const regions = svg.append("g");
 
   var promises = [];
-  promises.push(d3.json("/assets/data/regions.json")); // Replace with the path to your regions data file
-  promises.push(d3.csv("/assets/data/map-data.csv")); // Replace with the path to your collaborations data file
+  promises.push(d3.json("assets/data/regions.geojson")); // Replace with the path to your regions data file
+  promises.push(d3.csv("assets/data/map-data.csv")); // Replace with the path to your collaborations data file
 
   Promise.all(promises).then(function (values) {
     const geojson = values[0];
@@ -37,12 +37,12 @@ function mapCollaborations() {
       .data(geojson.features)
       .enter()
       .append("path")
-      .attr('id', d => "d" + d.properties.CODE_REG)
+      .attr('id', d => "d" + d.properties.code)
       .attr("d", path);
 
     // Quantile scales map an input domain to a discrete range, 0...max(collaborations) to 1...9
     var quantile = d3.scaleQuantile()
-      .domain([0, d3.max(csv, e => +e.COLLABORATIONS)])
+      .domain([0, d3.max(csv, e => +e.COLLABORATION)])
       .range(d3.range(9));
 
     var legend = svg.append('g')
@@ -59,22 +59,24 @@ function mapCollaborations() {
       .attr("class", d => "q" + d + "-9");
 
     var legendScale = d3.scaleLinear()
-      .domain([0, d3.max(csv, e => +e.COLLABORATIONS)])
+      .domain([0, d3.max(csv, e => +e.COLLABORATION)])
       .range([0, 9 * 20]);
 
     var legendAxis = svg.append("g")
       .attr('transform', 'translate(550, 150)')
       .call(d3.axisRight(legendScale).ticks(6));
 
-    csv.forEach(function (e, i) {
-      d3.select("#d" + e.CODE_REG)
-        .attr("class", d => "region q" + quantile(+e.COLLABORATIONS) + "-9")
+    let regionsValues = Array.from(d3.group(csv, d => d.CODE_REG))
+    regionsValues.forEach(function (e, i) {
+      //faire la somme des collaboration
+      d3.select("#d" + e[0])      
+        .attr("class", "region q" + quantile(+e[1].COLLABORATION) + "-9")
         .on("mouseover", function (event, d) {
           div.transition()
             .duration(200)
             .style("opacity", .9);
           div.html("<b>Région : </b>" + e.NOM_REGION + "<br>"
-            + "<b>Collaborations : </b>" + e.COLLABORATIONS + "<br>")
+            + "<b>Collaborations : </b>" + e.COLLABORATION + "<br>")
             .style("left", (event.pageX + 30) + "px")
             .style("top", (event.pageY - 30) + "px");
         })
