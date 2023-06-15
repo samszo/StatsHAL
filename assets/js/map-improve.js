@@ -6,7 +6,7 @@ function mapImprove() {
     const width = document.getElementById("container").offsetWidth * 0.95,
         height = 550,
         legendCellSize = 20,
-        colors = ['#d4eac7', '#c6e3b5', '#b7dda2', '#a9d68f', '#9bcf7d', '#8cc86a', '#7ec157', '#77be4e', '#70ba45', '#65a83e', '#599537', '#4e8230', '#437029', '#385d22', '#2d4a1c', '#223815'];
+        colors = ['#EAC7C7', '#E3B5B5', '#DDA2A2', '#D68F8F', '#CF7D7D', '#C86A6A', '#C15757', '#BE4E4E', '#BA4545', '#A83E3E', '#953737', '#823030', '#702929', '#5D2222', '#4A1C1C', '#381515'];
 
     const svg = d3.select('#chart').append("svg")
         .attr("id", "svg")
@@ -26,7 +26,7 @@ function mapImprove() {
         .attr("x", (width / 2))
         .attr("y", 25)
         .attr("text-anchor", "middle")
-        .style("fill", "#c1d3b8")
+        .style("fill", "#D3B8B8")
         .style("font-weight", "300")
         .style("font-size", "16px")
         .text("Répartition des collaborations par pays");
@@ -95,7 +95,7 @@ function mapImprove() {
                 .attr("scorecolor", quantile(+e.score))
                 .style("fill", quantile(+e.score))
                 .on("mouseover", function(d) {
-                    countryPath.style("fill", "#9966cc");
+                    countryPath.style("fill", "#F1F501");
                     tooltip.style("display", null);
                     tooltip.select('#tooltip-country')
                         .text(shortCountryName(e.frenchCountry));
@@ -135,7 +135,7 @@ function mapImprove() {
                         .attr('transform', 'translate(' + (legendCellSize + 5) + ', ' + (d * legendCellSize) + ')')
                         .style("display", null);
                     d3.selectAll("path[scorecolor='" + colors[d] + "']")
-                        .style('fill', "#9966cc");
+                        .style('fill', "#F1F501");
                 })
                 .on("mouseout", function(event, d) {
                     legend.select("#cursor")
@@ -149,7 +149,7 @@ function mapImprove() {
             .attr('height', legendCellSize + 'px')
             .attr('width', legendCellSize + 'px')
             .attr('x', 5)
-            .style("fill", "#999");
+            .style("fill", "#990000");
             
         legend.append("text")
             .attr("x", 30)
@@ -163,7 +163,7 @@ function mapImprove() {
             .attr("points", legendCellSize + ",0 " + legendCellSize + "," + legendCellSize + " " + (legendCellSize * 0.2) + "," + (legendCellSize / 2))
             .attr("id", "cursor")
             .style("display", "none")
-            .style('fill', "#9966cc");
+            .style('fill', "#F1F501");
                 
         var legendScale = d3.scaleLinear().domain([min, max])
             .range([0, colors.length * legendCellSize]);
@@ -182,7 +182,7 @@ function mapImprove() {
         
         tooltip.append("polyline") // The rectangle containing the text, it is 210px width and 60 height
             .attr("points","0,0 210,0 210,60 0,60 0,0")
-            .style("fill", "#222b1d")
+            .style("fill", "#2B1D1D")
             .style("stroke","black")
             .style("opacity","0.9")
             .style("stroke-width","1")
@@ -199,7 +199,7 @@ function mapImprove() {
         
         var text = tooltip.append("text") // Text that will contain all tspan (used for multilines)
             .style("font-size", "13px")
-            .style("fill", "#c1d3b8")
+            .style("fill", "#D3B8B8")
             .attr("transform", "translate(0, 20)");
         
         text.append("tspan") // Country name udpated by its id
@@ -219,7 +219,7 @@ function mapImprove() {
         
         text.append("tspan") // Score udpated by its id
             .attr("id", "tooltip-score")
-            .style("fill","#c1d3b8")
+            .style("fill","#D3B8B8")
             .style("font-weight", "bold");
         
         return tooltip;
