@@ -62,9 +62,9 @@ function mapImprove() {
             i++;            
         }
         //supprime les pays à 0
-        //scores.forEach((s,i)=>{if(s.score==0)delete scores[i];});
+        scores.forEach((s,i)=>{if(s.score==0)delete scores[i];});
         //réindex le tableau
-        //scores = scores.filter(s=>s);
+        scores = scores.filter(s=>s);
         var b  = path.bounds(geojson),
             s = .80 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
             t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
