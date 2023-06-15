@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diagramme circulaire des collaborations par région</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="pieChart"></canvas>
+
+    <script>
+        // Données des collaborations par région
+        var collaborationsParRegion = {
+            "Île-de-France": 1486,
+            "Pays de la Loire": 20,
+            "Hauts-de-France": 19,
+            "Normandie": 13,
+            "Auvergne-Rhône-Alpes": 13,
+            "Bourgogne-Franche-Comté": 12,
+            "Grand Est": 11,
+            "Provence-Alpes-Côte d'Azur": 17,
+            "Occitanie": 9
+        };
+
+        // Convertir les données en tableaux pour le diagramme
+        var regions = Object.keys(collaborationsParRegion);
+        var nombresCollaborations = Object.values(collaborationsParRegion);
+
+        // Créer le diagramme circulaire
+        var ctx = document.getElementById('pieChart').getContext('2d');
+        var pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: regions,
+                datasets: [{
+                    data: nombresCollaborations,
+                    backgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56',
+                        '#4BC0C0',
+                        '#9966FF',
+                        '#FF9F40',
+                        '#BDD535',
+                        '#FFD700',
+                        '#FF69B4'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Répartition des collaborations par région'
+                }
+            }
+        });
+    </script>
+</body>
+</html>
