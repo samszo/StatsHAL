@@ -24,6 +24,15 @@ function mapCollaborations() {
   // Append the group that will contain our paths
   const regions = svg.append("g");
 
+  svg.append("text")
+        .attr("x", (width / 2))
+        .attr("y", 25)
+        .attr("text-anchor", "middle")
+        .style("fill", "#D3B8B8")
+        .style("font-weight", "300")
+        .style("font-size", "16px")
+        .text("Répartition des collaborations par région");
+
   var promises = [];
   promises.push(d3.json("assets/data/regions.geojson")); // Replace with the path to your regions data file
   promises.push(d3.csv("assets/data/map-data.csv")); // Replace with the path to your collaborations data file
@@ -66,17 +75,19 @@ function mapCollaborations() {
       .attr('transform', 'translate(550, 150)')
       .call(d3.axisRight(legendScale).ticks(6));
 
+    let collaborationsByRegionObj = d3.rollup(csv, v => d3.sum(v, d => +d.COLLABORATION), d => d.CODE_REG);
     let regionsValues = Array.from(d3.group(csv, d => d.CODE_REG))
+     //faire la somme des collaboration
     regionsValues.forEach(function (e, i) {
-      //faire la somme des collaboration
+      var totalCollaborations = collaborationsByRegionObj.get(e[0]);
       d3.select("#d" + e[0])      
-        .attr("class", "region q" + quantile(+e[1].COLLABORATION) + "-9")
+        .attr("class", "region q" + quantile(totalCollaborations) + "-9")
         .on("mouseover", function (event, d) {
           div.transition()
             .duration(200)
             .style("opacity", .9);
-          div.html("<b>Région : </b>" + e.NOM_REGION + "<br>"
-            + "<b>Collaborations : </b>" + e.COLLABORATION + "<br>")
+          div.html("<b>Région : </b>" + e[1][0].NOM_REGION + "<br>"
+            + "<b>Collaborations : </b>" + totalCollaborations + "<br>")
             .style("left", (event.pageX + 30) + "px")
             .style("top", (event.pageY - 30) + "px");
         })
