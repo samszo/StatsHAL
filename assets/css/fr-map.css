@@ -26,7 +26,7 @@ div.chart-tooltip {
     height: 60px;
 }
 
-#svg {
+svg {
     display: block;
     margin: auto;
 }
@@ -37,7 +37,7 @@ div.chart-tooltip {
 }
 
 .q0-9 {
-    fill: #f9e5e5; 
+    fill: #fae6e6; 
 }
 
 .q1-9 {
@@ -45,29 +45,29 @@ div.chart-tooltip {
 }
 
 .q2-9 {
-    fill: #d89999; 
+    fill: #af6a6a; 
 }
 
 .q3-9 {
-    fill: #c26666; 
+    fill: #ab4e4e; 
 }
 
 .q4-9 {
-    fill: #ae4141; 
+    fill: #9e4040; 
 }
 
 .q5-9 {
-    fill: #8b2323; 
+    fill: #711b1b; 
 }
 
 .q6-9 {
-    fill: #6d0000; 
+    fill: #7e0103; 
 }
 
 .q7-9 {
-    fill: #440000; 
+    fill: #5d0000; 
 }
 
 .q8-9 {
-    fill: #1c0000; 
+    fill: #380000; 
 }
