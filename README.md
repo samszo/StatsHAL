@@ -25,4 +25,10 @@ Source : https://www.datavis.fr/d3js/map-population
 # Difficultés rencontrées lors de la récupération des données
 Lors de la récupération des données des collaborations pour les régions et les départements, nous avons fait face à plusieurs difficultés. Tout d'abord, nous n'avons pas trouvé de requête d'API HAL permettant de récupérer automatiquement les adresses des structures collaboratrices. En conséquence, nous avons dû recourir à une approche manuelle pour collecter ces informations.
 Nous avons créé un tableur Excel dans lequel nous avons consigné les détails des collaborations, y compris les adresses des structures. Cependant, malgré nos efforts, certaines adresses ont été difficiles à trouver, ce qui a entraîné des données manquantes dans notre ensemble de données.
-Le processus de collecte manuelle des adresses a pris beaucoup de temps et a demandé un travail minutieux. Nous avons effectué des recherches approfondies en utilisant différentes sources disponibles, telles que les sites Web des structures, les annuaires en ligne et les bases de données publiques. Malgré cela, certaines adresses se sont avérées introuvables ou difficiles à vérifier.
+Le processus de collecte manuelle des adresses a pris beaucoup de temps et a demandé un travail minutieux. Nous avons effectué des recherches approfondies en utilisant différentes sources disponibles, telles que les sites Web des structures, les annuaires en ligne et les bases de données publiques. Malgré cela, certaines adresses se sont avérées introuvables ou difficiles à vérifier. (...)
+# Autres datavisualisations réalisées 
+
+# Ressources : 
+* Listes des collaborations : https://docs.google.com/spreadsheets/d/1bLUAiZeHIonR4jnAMPDQIYxYU3v4ADKzgM3GStkekBM/edit?usp=sharing
+* 
+
