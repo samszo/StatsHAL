@@ -1,5 +1,8 @@
 # StatsHAL
 https://samszo.github.io/StatsHAL
+
+![Capture](https://github.com/samszo/StatsHAL/assets/114165475/a582f5f2-367a-4f8b-b3cb-7dcef7627d28)
+
 # Stage de Rim Kaidi - Représentations des données du laboratoire
 Ce répertoire GitHub a été créé dans le cadre du stage de Rim Kaidi, étudiante à l'université Paris 8 et stagiaire au sein du laboratoire paragraphe, pour stocker les codes relatifs aux différentes représentations des données du laboratoire. Ce projet vise à visualiser les données du laboratoire Paragraphe, notamment collaborations avec d'autres structures sur la plateforme HAL (l'archive ouverte), que ce soit à l'échelle mondiale, régionale ou départementale, à l'aide de cartes coroplèthes.
 Les codes des cartes sont récupérés du site "DATAVIS" https://www.datavis.fr/
