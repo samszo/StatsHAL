@@ -7,6 +7,9 @@ Les codes des cartes sont récupérés du site "DATAVIS" https://www.datavis.fr/
 Nous avons développé trois cartes coroplèthes pour illustrer les différentes collaborations du laboratoire :
 ## Carte mondiale des collaborations : 
 Cette carte met en évidence les partenariats et les collaborations du laboratoire Paragraphe avec d'autres structures à travers le monde. Elle permet d'avoir une vision globale des interactions internationales.
+
+![image](https://github.com/samszo/StatsHAL/assets/114165475/d6b6f47c-4bbc-44da-b62f-827bb01cee0f)
+
 ## Carte des régions françaises : 
 Elle présente les collaborations du laboratoire Paragraphe avec des structures situées dans différentes régions de la France. Elle permet de visualiser les collaborations à l'échelle nationale et de mettre en évidence les relations interrégionales.
 ## Carte des départements français : 
