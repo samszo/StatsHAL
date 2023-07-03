@@ -1,11 +1,16 @@
-//merci beaucoup à https://www.datavis.fr/d3js/map-improve
+import {appUrl} from '../../modules/appUrl.js';
 
+//merci beaucoup à https://www.datavis.fr/d3js/map-improve
 document.addEventListener("DOMContentLoaded", mapImprove);
+let legendAxis,
+    pUrl = new appUrl({'url':new URL(document.location)}),
+    q = pUrl.params && pUrl.params.has('q') ? "?q="+pUrl.params.get('q') : '/LP/?q=*%3A*';
 
 function mapImprove() {
     const width = document.getElementById("container").offsetWidth * 0.95,
         height = 550,
         legendCellSize = 20,
+        sourceHAL = "https://api.archives-ouvertes.fr/search"+q+"&wt=json&indent=true&facet=true&facet.field=country_s&rows=0",
         colors = ['#EAC7C7', '#E3B5B5', '#DDA2A2', '#D68F8F', '#CF7D7D', '#C86A6A', '#C15757', '#BE4E4E', '#BA4545', '#A83E3E', '#953737', '#823030', '#702929', '#5D2222', '#4A1C1C', '#381515'];
 
     const svg = d3.select('#chart').append("svg")
@@ -38,14 +43,16 @@ function mapImprove() {
         .style("fill", "#929292")
         .style("font-weight", "200")
         .style("font-size", "12px")
-        .text("(source : HAL API)");
+        .style("cursor", "pointer")
+        .text("(source : HAL API)")
+        .on("click",e=>window.open(sourceHAL, "_blanck"));
 
     const cGroup = svg.append("g");
 
     var promises = [];
     promises.push(d3.json("assets/data/world-countries-no-antartica.json"));
     promises.push(d3.csv("assets/data/data.csv"));
-    promises.push(d3.json("https://api.archives-ouvertes.fr/search/LP/?q=*%3A*&wt=json&indent=true&facet=true&facet.field=country_s&rows=0"));
+    promises.push(d3.json(sourceHAL));
 
     Promise.all(promises).then(function(values) {
         const geojson = values[0];
@@ -149,7 +156,7 @@ function mapImprove() {
             .attr('height', legendCellSize + 'px')
             .attr('width', legendCellSize + 'px')
             .attr('x', 5)
-            .style("fill", "#990000");
+            .style("fill", "#929292");
             
         legend.append("text")
             .attr("x", 30)

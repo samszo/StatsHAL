@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline des publications</title>
+  <script src="assets/js/timelines-chart.min.js" ></script>
+</head>
+<body>
+  
+<script>
+  const myData = getRandomData(true);
+
+  TimelinesChart()(document.body)
+    .zScaleLabel('My Scale Units')
+    .zQualitative(true)
+    .data(myData);
+</script>
+
+</body>
+</html>
