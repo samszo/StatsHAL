@@ -1,21 +1,21 @@
 .svg {
     display: block;
     margin: auto;
-    background: #3e3030;
-    color: #ada0a0;
+    background: #ffffff;
+    color: #eb3a3a;
     font-family: "Lucida Console", Monaco, monospace;
 }
     
 .country {
     fill: #999;
-    stroke: black;
+    stroke: rgb(250, 247, 247);
     stroke-width: 0.5px;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
 .axis line {
-    stroke: #d3b8b8;
+    stroke: #000000;
 }
 
 .axis path {
@@ -23,5 +23,5 @@
 }
 
 .axis text {
-    fill: #d3b8b8;
+    fill: #000000;
 }

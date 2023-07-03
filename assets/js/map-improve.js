@@ -31,7 +31,7 @@ function mapImprove() {
         .attr("x", (width / 2))
         .attr("y", 25)
         .attr("text-anchor", "middle")
-        .style("fill", "#D3B8B8")
+        .style("fill", "black")
         .style("font-weight", "300")
         .style("font-size", "16px")
         .text("Répartition des collaborations par pays");
@@ -40,7 +40,7 @@ function mapImprove() {
         .attr("x", (width / 2))
         .attr("y", 50)
         .attr("text-anchor", "middle")
-        .style("fill", "#929292")
+        .style("fill", "black")
         .style("font-weight", "200")
         .style("font-size", "12px")
         .style("cursor", "pointer")
