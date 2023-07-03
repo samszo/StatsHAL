@@ -4,7 +4,8 @@ import {appUrl} from '../../modules/appUrl.js';
 document.addEventListener("DOMContentLoaded", mapImprove);
 let legendAxis,
     pUrl = new appUrl({'url':new URL(document.location)}),
-    q = pUrl.params && pUrl.params.has('q') ? "?q="+pUrl.params.get('q') : '/LP/?q=*%3A*';
+    s = pUrl.params && pUrl.params.has('q') ? pUrl.params.get('q') : "",
+    q = s ? "?q="+s : '/LP/?q=*%3A*';
 
 function mapImprove() {
     const width = document.getElementById("container").offsetWidth * 0.95,
@@ -34,7 +35,7 @@ function mapImprove() {
         .style("fill", "black")
         .style("font-weight", "300")
         .style("font-size", "16px")
-        .text("Répartition des collaborations par pays");
+        .text("Répartition des collaborations par pays de "+s);
 
     svg.append("text")
         .attr("x", (width / 2))
