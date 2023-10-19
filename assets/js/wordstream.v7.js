@@ -830,7 +830,8 @@
                     .attr("stroke-width", 0);
             });
             //Click
-            mainGroup.selectAll('.textData').on('click', function () {
+            mainGroup.selectAll('.textData').on('click', function (e,d) {
+                showModal(d);
                 //gestion du zoom
                 let contTrans = container.attr('transform');
                 container.attr('transform','');
@@ -959,6 +960,12 @@
                     .attr('font-size', tickFont);
             }
 
+            function showModal(d){
+                config.m.setBody('<h3 class="text-white bg-dark">'+d.d.title_s[0]+'</h3>'
+                +'<iframe class="fiche" src="'+d.d.uri_s+'"/>');
+                config.m.setBoutons([{'name':"Close"}]);                
+                config.m.show();    
+            }
             function styleGridlineNodes(gridlineNodes) {
                 gridlineNodes.selectAll('.domain')
                     .attr("fill", "none")

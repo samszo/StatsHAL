@@ -67,14 +67,16 @@ function mapPopulation() {
             .call(d3.axisRight(legendScale).ticks(6));
 
         csv.forEach(function(e,i) {
-            d3.select("#d" + e.CODE_DEPT)
+            e.CODE_DEPT.split(', ').forEach((cd,j)=>{                
+                let nd = e.NOM_DEPT.split(',');
+            d3.select("#d" + cd)
                 .attr("class", d => "department q" + quantile(+e.COLLABORATION) + "-9") 
                 .on("mouseover", function(event, d) {
                     div.transition()
                         .duration(200)
                         .style("opacity", .9);
                     div.html("<b>Région : </b>" + e.NOM_REGION + "<br>"
-                            + "<b>Département : </b>" + e.NOM_DEPT + "<br>"
+                            + "<b>Département : </b>" + nd[j] + "<br>"
                             + "<b>Collaborations : </b>" + e.COLLABORATION + "<br>") 
                         .style("left", (event.pageX + 30) + "px")
                         .style("top", (event.pageY - 30) + "px");
@@ -85,6 +87,8 @@ function mapPopulation() {
                         .style("left", "-500px")
                         .style("top", "-500px");
                 });
+            })
+
         });
     });
 

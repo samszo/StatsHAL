@@ -1,5 +1,4 @@
 STRUCTURE,NOM_REGION,CODE_REG,NOM_DEPT,CODE_DEPT,COLLABORATION
-Laboratoire Paragraphe,Île-de-France,11,Seine-Saint-Denis,93,1486
 Centre de recherche en éducation de Nantes,Pays de la Loire,52,Loire-Atlantique,44,20
 Centre de recherche sur le travail et le développement,Île-de-France,11,Paris,75,20
 Dispositifs d'Information et de Communication à l'ère du Numérique - Paris île de France,Île-de-France,11,Paris,75,19
@@ -15,7 +14,7 @@ Laboratoire Lorrain de Recherche en Informatique et ses Applications,Grand Est,4
 Centre d'Histoire Culturelle des Sociétés Contemporaines,Île-de-France,11,Yvelines,78,10
 "Centre de sociologie des organisations (Sciences Po, CNRS)",Île-de-France,11,Paris,75,10
 "CLInique, PSYchanalyse, Développement",Île-de-France,11,Hauts-de-Seine,92,10
-Fonctionnement et Dysfonctionnement Cognitifs : Les âges de la vie,Île-de-France,11,"Hauts-de-Seine, Seine-Saint-Denis","92, 93",10
+Fonctionnement et Dysfonctionnement Cognitifs : Les âges de la vie,Île-de-France,11,"Hauts-de-Seine, Seine-Saint-Denis",92,10
 "Laboratoire Information, Milieux, Média, Médiation - EA 3820",Provence-Alpes-Côte d'Azur,93,,,9
 Laboratoire d'Interaction des Systèmes et des Technologies,Île-de-France,11,l'Essonne,91,9
 "Psychologie : Interaction, Temps, Emotions, Cognition (PSITEC) - ULR",Hauts-de-France,32,Nord,59,9

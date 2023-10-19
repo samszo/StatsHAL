@@ -1,4 +1,5 @@
 import {appUrl} from './modules/appUrl.js';
+import {modal} from './modules/modal.js';
 
 const config = {
     topWord: 40,
@@ -7,7 +8,8 @@ const config = {
     tickFont: 12,
     legendFont: 12,
     curve: d3.curveMonotoneX,
-    topWord: 100
+    topWord: 100,
+    m : new modal({'size':'modal-lg'})
 };
 let dataForVis = [], authors=[], words=[], svg = d3.select("#canvas").append('svg').attr("id", "mainSVG"),
     margins = {t:10,b:10,l:10,r:10},
