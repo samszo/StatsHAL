@@ -1,5 +1,5 @@
 import {appUrl} from './appUrl.js';
-export class worldMap {
+export class mapWorld {
     constructor(params) {
         var me = this;
         this.id = params.id ? params.id : 'streamwords';

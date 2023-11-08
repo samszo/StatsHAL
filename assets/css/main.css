@@ -1,5 +1,8 @@
 body{
     background-color: #000;
+    margin: 0;
+    height: 100%;
+    overflow: hidden
 }
 
 #svgWorldMap {
@@ -29,6 +32,76 @@ body{
 .axis text {
     fill: #000000;
 }
+
+.region {
+    cursor: pointer;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: black;
+    stroke-width: 0.5px;
+}
+
+.region:hover {
+    stroke-width: 2px;
+}
+
+div.chart-tooltip {
+    position: absolute;
+    opacity: 0.8;
+    z-index: 1000;
+    text-align: left;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 8px;
+    color: #fff;
+    background-color: #000;
+    font: 12px sans-serif;
+    max-width: 300px;
+    height: 60px;
+}
+
+.select-field {
+    margin-top: -3rem;
+    margin-bottom: 5rem;
+}
+
+.q0-9 {
+    fill: #fae6e6; 
+}
+
+.q1-9 {
+    fill: #eccccc; 
+}
+
+.q2-9 {
+    fill: #af6a6a; 
+}
+
+.q3-9 {
+    fill: #ab4e4e; 
+}
+
+.q4-9 {
+    fill: #9e4040; 
+}
+
+.q5-9 {
+    fill: #711b1b; 
+}
+
+.q6-9 {
+    fill: #7e0103; 
+}
+
+.q7-9 {
+    fill: #5d0000; 
+}
+
+.q8-9 {
+    fill: #380000; 
+}
+
 
 
 /* USE CSS for loading icon */

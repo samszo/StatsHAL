@@ -1,24 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>StatsHAL</title>
-<link href="assets/css/main.css" rel="stylesheet"/>
-<link href="assets/css/bootstrap5.3.min.css" rel="stylesheet">
-
-<script src="https://unpkg.com/compromise"></script>
-<script src="https://cdn.jsdelivr.net/npm/stopword/dist/stopword.umd.min.js"></script>
-<script src="assets/js/d3.v7.min.js"></script>
-<script src="assets/js/wordstream.v7.js"></script>
-<script src="assets/js/bootstrap5.3.bundle.min.js"></script>
-<script type="module" src="main.js"></script>
-</head>
-<body class="d-flex h-100 text-center text-white bg-dark">
-=======
     <title>Stats HAL</title>
     <script type="text/javascript" src="assets/js/d3.v7.min.js"></script>
     <script src="assets/js/bootstrap5.3.bundle.min.js"></script>
@@ -89,8 +74,7 @@
 
 
         <main id='mainContent' class="px-3">
-
-            <div class="container-fluid">
+            <div class="container-fluid text-center">
                 <div class="row text-start mt-3">
                     <div class="col-4">
                         <div class="row g-3 ">  
@@ -120,7 +104,7 @@
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                               <button class="nav-link active" id="nav-wordstream-tab" data-bs-toggle="tab" data-bs-target="#nav-wordstream" type="button" role="tab" aria-controls="nav-wordstream" aria-selected="true">Flux des mots</button>
                               <button class="nav-link" id="nav-worldMap-tab" data-bs-toggle="tab" data-bs-target="#nav-worldMap" type="button" role="tab" aria-controls="nav-worldMap" aria-selected="false">Collaborations mondiales</button>
-                              <button class="nav-link" id="nav-france-tab" data-bs-toggle="tab" data-bs-target="#nav-france" type="button" role="tab" aria-controls="nav-france" aria-selected="false">Collaborations françaises</button>
+                              <button class="nav-link" id="nav-franceMap-tab" data-bs-toggle="tab" data-bs-target="#nav-franceMap" type="button" role="tab" aria-controls="nav-franceMap" aria-selected="false">Collaborations françaises</button>
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
@@ -128,10 +112,11 @@
                                 <div id="canvasStream"></div>    
                             </div>
                             <div class="tab-pane fade" id="nav-worldMap" role="tabpanel" aria-labelledby="nav-worldMap-tab" tabindex="0">
-                                <div id="canvasWorldMap"></div>    
-                                
+                                <div id="canvasWorldMap"></div>                                    
                             </div>
-                            <div class="tab-pane fade" id="nav-france" role="tabpanel" aria-labelledby="nav-france-tab" tabindex="0">...</div>
+                            <div class="tab-pane fade" id="nav-franceMap" role="tabpanel" aria-labelledby="nav-franceMap-tab" tabindex="0">
+                                <div id="canvasFranceMap"></div>                                                                    
+                            </div>
                           </div>
                     </div>
                 </div>
@@ -158,7 +143,6 @@
     </div>
 
 
->>>>>>> b053111 (pour journée paragraphe)
     <div id="loading-container">
         <div class="loadingio-spinner-double-ring-4dols36ufwg" id="ws-loading">
             <div class="ldio-6pd26u1x99x">
@@ -177,7 +161,8 @@
     <script type="module">
         import {modal} from './modules/modal.js';
         import {streamWords} from './modules/streamWords.js';
-        import {worldMap} from './modules/worldMap.js';
+        import {mapWorld} from './modules/mapWorld.js';
+        import {mapFrance} from './modules/mapFrance.js';
         
 
         let apiHAL="https://api.archives-ouvertes.fr/search", 
@@ -186,12 +171,12 @@
             m=new modal({'size':'modal-lg'}), hotRes=false, hotDocs=false,
             rectFooter = d3.select('footer').node().getBoundingClientRect(),
             rectHeader = d3.select('header').node().getBoundingClientRect(),
-            rectResult = d3.select('#titreResult').node().getBoundingClientRect(),
+            rectResult = d3.select('#resultQuery').node().getBoundingClientRect(),
             rectDiag = d3.select('#nav-tabContent').node().getBoundingClientRect(),
-            hTableur = window.screen.height-rectFooter.top-rectResult.top+rectResult.height;
+            hTableur = window.innerHeight-rectFooter.height-rectResult.top;
         //dimensionnement du tableur
         d3.select('#resultQuery').style('height',hTableur+"px");
-        rectDiag.height = window.screen.height-rectFooter.top-rectDiag.top;
+        rectDiag.height = window.innerHeight-rectFooter.height-rectDiag.top;
 
         //chargement des menus
         d3.json("assets/data/queries.json").then(data=>{
@@ -218,7 +203,7 @@
             execQuery(d.query)
         }
         function execQuery(q){
-            queryHALold = queryHALold == "" ? apiHAL+q : queryHALold 
+            queryHALold = queryHALold == "" ? apiHAL+q : queryHAL; 
             queryHAL = apiHAL+q;
             d3.json(queryHAL).then(data=>{
                 let cont = d3.select('#resultQuery');
@@ -241,13 +226,22 @@
                     break;
                 case "nav-worldMap-tab":
                     if(!wm || queryHALold != queryHAL){
-                        wm = new worldMap({
+                        wm = new mapWorld({
                             'cont':d3.select('#canvasWorldMap'),
                             'urlData':queryHAL, 'urlLabel':d3.select("#inpQueryLabel").node().value,
                             'width':rectDiag.width,'height':rectDiag.height
                         })
                     }
-                    break;                                
+                    break;    
+                case "nav-franceMap-tab":
+                    if(!wm || queryHALold != queryHAL){
+                        wm = new mapFrance({
+                            'cont':d3.select('#canvasFranceMap'),
+                            'urlData':queryHAL, 'urlLabel':d3.select("#inpQueryLabel").node().value,
+                            'width':rectDiag.width,'height':rectDiag.height
+                        })
+                    }
+                break;                        
                 default:
                     break;
             }
