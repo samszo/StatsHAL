@@ -989,5 +989,6 @@
 
         })(data);
         return window.wordstream;
+        
     }
 })(window);

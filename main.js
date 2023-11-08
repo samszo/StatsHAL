@@ -21,7 +21,6 @@ let dataForVis = [], authors=[], words=[], svg = d3.select("#canvas").append('sv
         +"&rows=10000"
         +"&fl=authIdHal_s,keyword_s,title_s,docid,uri_s,producedDate_s,publicationDate_s"
         +"&sort="+dateField+" asc";
-//d3.json(uri,data=>{
 d3.json(uri).then(data=>{
     console.log(data);
     /*

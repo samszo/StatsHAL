@@ -1,0 +1,5 @@
+[
+    {"label":"Publications du Laboratoire Paragraphe","query":"?q=structId_i:(1087002 OR 1003467 OR 39850)&rows=10000&fq=publicationDateY_i:[2020 TO *]"},
+    {"label":"Publications de l'Axe DiNuPUMoC","query":"?q=authIdHal_s:(imad-saleh OR philippe-bootz OR everardo-reyes-garcia OR maria-ines-laitano OR hakim-hachour OR nicolas-sauret OR arnaud-laborderie OR samuel-szoniecky) OR authIdHal_i:(1027582 OR 953983)&fq=publicationDateY_i:[2020 TO *]&rows=10000"},
+    {"label":"Publications de Samuel Szoniecky","query":"?q=authIdHal_s:samuel-szoniecky&rows=10000&fl=authIdHal_s,keyword_s,title_s,docid,uri_s,producedDate_s,publicationDate_s&sort=publicationDate_s asc"}
+]

@@ -1,0 +1,126 @@
+#logoMazePetit {
+    height: 60px;
+    width: 240px;
+}
+
+#contentDetails {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.txtData{
+    fill: white;
+    font-size: large;
+    alignment-baseline:middle;    
+}
+.editJSON {
+    overflow-x: scroll;
+    height: 650px;
+}
+
+.autofirst {
+    font-style: italic;
+    font-size: 1em;
+}
+
+.l {
+    font-style: italic;
+    font-size: 1em;
+}
+
+.mc {
+    padding: 1em;
+    font-size: 1em;
+    color: #dc3545
+}
+
+.noscroll {
+    overflow-x: hidden;
+}
+
+.fill {
+    min-height: 100%;
+    height: 100%;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
+.tab-pane {
+    height: 580px;
+}
+.vscroll{
+    overflow-y: scroll;
+}
+.progress {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.htDark {
+      width: 100px;
+      padding: 0.2em;
+      background: #282d2f;
+      outline: none;
+      color: #fff;
+      border: 0
+    }
+    
+.handsontable .htDark {
+    background: #000000;
+    color: #eee;
+}
+
+.handsontable .darkTH {
+    background: #313131;
+    color: #eee;
+}
+
+.handsontable tbody th.ht__highlight,.handsontable thead th.ht__highlight {
+    background-color: #c2000b;
+}    
+
+.handsontable .manualColumnResizer.active,.handsontable .manualColumnResizer:hover,.handsontable .manualRowResizer.active,.handsontable .manualRowResizer:hover {
+    background-color: #c2000b
+}
+
+.handsontable .manualColumnResizerGuide {
+    position: absolute;
+    right: unset;
+    top: 0;
+    background-color: #c2000b;
+    display: none;
+    width: 0;
+    border-right: 1px dashed #777;
+    border-left: none;
+    margin-left: 5px;
+    margin-right: unset
+}
+
+[dir=rtl].handsontable .manualColumnResizerGuide {
+    left: unset;
+    border-left: 1px dashed #777;
+    border-right: none;
+    margin-right: 5px;
+    margin-left: unset
+}
+
+.handsontable .manualRowResizerGuide {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #c2000b;
+    display: none;
+    height: 0;
+    border-bottom: 1px dashed #777;
+    margin-top: 5px
+}
+.fiche{
+    width: 100%;
+    height: 600px;
+
+}

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>StatsHAL</title>
 <link href="assets/css/main.css" rel="stylesheet"/>
 <link href="assets/css/bootstrap5.3.min.css" rel="stylesheet">
@@ -16,16 +18,298 @@
 <script type="module" src="main.js"></script>
 </head>
 <body class="d-flex h-100 text-center text-white bg-dark">
+=======
+    <title>Stats HAL</title>
+    <script type="text/javascript" src="assets/js/d3.v7.min.js"></script>
+    <script src="assets/js/bootstrap5.3.bundle.min.js"></script>
+    <script src="assets/js/all.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/handsontable.full.min.js"></script>
+
+    <script src="https://unpkg.com/compromise"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stopword/dist/stopword.umd.min.js"></script>
+    <script src="assets/js/wordstream.v7.js"></script>
+    
+    <link href="assets/css/bootstrap5.3.min.css" rel="stylesheet">
+    <link href="assets/css/menu.css" rel="stylesheet">
+    <link href="assets/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/handsontable.full.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+
+
+</head>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+
+        <header>
+            <div>
+                <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-bottom-dark"
+                    data-bs-theme="dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img src="assets/img/logo-paragraphe-blanc.svg" alt="Logo" width="86"
+                                class="d-inline-block align-text-top">
+                            Stats HAL
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul id="navbarMain" class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="fa-solid fa-file-export"></i>
+                                        <span id="selectExport">Choisir un export</span>
+                                    </a>
+                                    <ul id="ddExport" class="dropdown-menu">
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="fa-solid fa-clipboard-question"></i>
+                                        <span id="selectQuery">Exemples de requête</span>
+                                    </a>
+                                    <ul id="ddQueries" class="dropdown-menu">
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+        </header>
+
+
+        <main id='mainContent' class="px-3">
+
+            <div class="container-fluid">
+                <div class="row text-start mt-3">
+                    <div class="col-4">
+                        <div class="row g-3 ">  
+                            <h4>Requête</h4>
+                            <div class="mb-3">
+                                <label for="inpQueryLabel" class="form-label">Nom</label>
+                                <input type="text" class="form-control" id="inpQueryLabel" >
+                            </div>
+                            <div class="col-12">
+                                <label for="inpQuery" class="form-label">Texte</label>
+                                <textarea class="form-control" id="inpQuery" rows="3"></textarea>
+                            </div>                                                                                  
+                            <div class="col-8">
+                                <a href="https://api.archives-ouvertes.fr/docs/search">Documentation pour construire des requêtes</a>                                        
+                            </div>                                                                                  
+                            <div class="col-4">
+                                <button id="btnTestQuery" type="button" class="btn btn-danger">Tester</button>
+                            </div>                                                                                  
+                        </div>
+                        <div class="row g-3">
+                            <h4 id="titreResult">Résultat de la requête</h4>
+                            <div id="resultQuery"></div>
+                        </div> 
+                    </div>
+                    <div class="col-8 h-100" id="contentMap">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                              <button class="nav-link active" id="nav-wordstream-tab" data-bs-toggle="tab" data-bs-target="#nav-wordstream" type="button" role="tab" aria-controls="nav-wordstream" aria-selected="true">Flux des mots</button>
+                              <button class="nav-link" id="nav-worldMap-tab" data-bs-toggle="tab" data-bs-target="#nav-worldMap" type="button" role="tab" aria-controls="nav-worldMap" aria-selected="false">Collaborations mondiales</button>
+                              <button class="nav-link" id="nav-france-tab" data-bs-toggle="tab" data-bs-target="#nav-france" type="button" role="tab" aria-controls="nav-france" aria-selected="false">Collaborations françaises</button>
+                            </div>
+                          </nav>
+                          <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-wordstream" role="tabpanel" aria-labelledby="nav-wordstream-tab" tabindex="0">
+                                <div id="canvasStream"></div>    
+                            </div>
+                            <div class="tab-pane fade" id="nav-worldMap" role="tabpanel" aria-labelledby="nav-worldMap-tab" tabindex="0">
+                                <div id="canvasWorldMap"></div>    
+                                
+                            </div>
+                            <div class="tab-pane fade" id="nav-france" role="tabpanel" aria-labelledby="nav-france-tab" tabindex="0">...</div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="mt-auto text-white-50">
+            <p style="padding-top: 6px;">Design by <a href="https://samszo.univ-paris8.fr/" class="text-white">Samuel
+                    Szoniecky</a>
+                <a target="_blank" href="https://www.univ-paris8.fr/EA-349-Laboratoire-Paragraphe">
+                    <img style="height: 40px;" src="assets/img/logo-paragraphe-blanc.svg"
+                        alt="Laboratoire Paragraphe" />
+                </a>
+                <a target="_blank" href="https://github.com/samszo/HDR">
+                    <button type="button" class="btn btn-danger">
+                        <i class="fa-brands fa-github fa-2xl"></i>
+                    </button>
+                </a>
+                Template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
+                    href="https://twitter.com/mdo" class="text-white">@mdo</a>.
+            </p>
+        </footer>
+
+    </div>
+
+
+>>>>>>> b053111 (pour journée paragraphe)
     <div id="loading-container">
         <div class="loadingio-spinner-double-ring-4dols36ufwg" id="ws-loading">
             <div class="ldio-6pd26u1x99x">
-            <div></div>
-            <div></div>
-            <div><div></div></div>
-            <div><div></div></div>
-        </div></div>
+                <div></div>
+                <div></div>
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="canvas"></div>    
-    
+
+    <script type="module">
+        import {modal} from './modules/modal.js';
+        import {streamWords} from './modules/streamWords.js';
+        import {worldMap} from './modules/worldMap.js';
+        
+
+        let apiHAL="https://api.archives-ouvertes.fr/search", 
+            queryHAL = "", queryHALold = "", ws=false, wm = false, 
+            activeDiag = "nav-wordstream-tab",
+            m=new modal({'size':'modal-lg'}), hotRes=false, hotDocs=false,
+            rectFooter = d3.select('footer').node().getBoundingClientRect(),
+            rectHeader = d3.select('header').node().getBoundingClientRect(),
+            rectResult = d3.select('#titreResult').node().getBoundingClientRect(),
+            rectDiag = d3.select('#nav-tabContent').node().getBoundingClientRect(),
+            hTableur = window.screen.height-rectFooter.top-rectResult.top+rectResult.height;
+        //dimensionnement du tableur
+        d3.select('#resultQuery').style('height',hTableur+"px");
+        rectDiag.height = window.screen.height-rectFooter.top-rectDiag.top;
+
+        //chargement des menus
+        d3.json("assets/data/queries.json").then(data=>{
+            setMenu('#ddQueries',data,'label',showQuery);
+            hideLoader();       
+        })
+        
+        //gestion des event de l'ihm
+        d3.select("#btnTestQuery").on('click',e=>{
+            showLoader();
+            let q = d3.select("#inpQuery").node().value; 
+            execQuery(q)
+        })
+        d3.selectAll('button[data-bs-toggle="tab"]').on('click', event => {
+            activeDiag = event.target.id;
+            setDiag();
+        })
+
+        
+        function showQuery(e,d,q){
+            showLoader();
+            d3.select('#inpQuery').node().value= d.query;
+            d3.select('#inpQueryLabel').node().value= d.label;            
+            execQuery(d.query)
+        }
+        function execQuery(q){
+            queryHALold = queryHALold == "" ? apiHAL+q : queryHALold 
+            queryHAL = apiHAL+q;
+            d3.json(queryHAL).then(data=>{
+                let cont = d3.select('#resultQuery');
+                cont.selectAll('div').remove()
+                setDiag();
+                setTable(data.response.docs,cont);
+                hideLoader();
+            })
+        }
+
+        function setDiag(){
+            switch (activeDiag) {
+                case "nav-wordstream-tab":
+                    if(!ws || queryHALold != queryHAL){
+                        ws = new streamWords({
+                            'cont':d3.select('#canvasStream'),'urlData':queryHAL,
+                            'width':rectDiag.width,'height':rectDiag.height
+                        })
+                    }
+                    break;
+                case "nav-worldMap-tab":
+                    if(!wm || queryHALold != queryHAL){
+                        wm = new worldMap({
+                            'cont':d3.select('#canvasWorldMap'),
+                            'urlData':queryHAL, 'urlLabel':d3.select("#inpQueryLabel").node().value,
+                            'width':rectDiag.width,'height':rectDiag.height
+                        })
+                    }
+                    break;                                
+                default:
+                    break;
+            }
+
+        }
+
+        function setTable(data, cont, hot, menu){
+            if(hot){                
+                hot.clear();
+                if(data)hot.updateData(data);
+                else hot.updateData([]);
+                //hot.render()
+            }else{
+                let headers = Object.keys(data[0]),
+                    menuContext = menu ? {
+                        callback(key, selection, clickEvent) {
+                          // Common callback for all options
+                          console.log(key, selection, clickEvent);
+                        },
+                        items: {
+                          complexity: { // Own custom option
+                            name() { // `name` can be a string or a function
+                              return `<button type="button" id="btnComplexityItem" class="btn btn-sm btn-danger">
+                                        <i class="fa-solid fa-calculator"></i>
+                                    </button>`;
+                            },
+                            callback(key, s, e) { // Callback for specific option
+                                let r = this.getDataAtRow(s[0].start.row);
+                                getData(urlApiOmk+'id='+r[1]);
+                            }
+                          }
+                        }
+                      } : menu;
+                hot = new Handsontable(cont.append('div').node(), {
+                    className: 'htDark',
+                    afterGetColHeader: function(col, TH){
+                        TH.className = 'darkTH'
+                    },
+                    colHeaders: true,
+                    rowHeaders: true,
+                    data:data,
+                    colHeaders: headers,
+                    height: hTableur,
+                    width: '100%',
+                    licenseKey: 'non-commercial-and-evaluation',
+                    customBorders: true,
+                    dropdownMenu: true,
+                    multiColumnSorting: true,
+                    filters: true,
+                    selectionMode:'single',
+                    columns: getCellEditor(headers),
+                    allowInsertColumn: false,
+                    copyPaste: false,
+                    contextMenu: menuContext,
+                    search: true,                        
+                });
+            }
+            return hot;
+        }
+
+    </script>
+
 </body>
+
 </html>
