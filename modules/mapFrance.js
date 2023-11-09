@@ -1,4 +1,6 @@
 import {appUrl} from './appUrl.js';
+import {val-zip} from 'https://cdn.jsdelivr.net/npm/val-zip@latest/dist/val-zip.umd.js';
+
 export class mapFrance {
     constructor(params) {
         var me = this;
@@ -9,17 +11,52 @@ export class mapFrance {
         this.data = params.data ? params.data : false;
         const width = params.width ? params.width : 600;
         const height = params.height ? params.height : 600;
-        let legendAxis,svg,
+        let legendAxis,svg,dataForVis
             legendCellSize = 20,
             colors = ['#EAC7C7', '#E3B5B5', '#DDA2A2', '#D68F8F', '#CF7D7D', '#C86A6A', '#C15757', '#BE4E4E', '#BA4545', '#A83E3E', '#953737', '#823030', '#702929', '#5D2222', '#4A1C1C', '#381515'],
             pUrl = new appUrl({'url':new URL(me.urlData)}),
             q = pUrl.params && pUrl.params.has('q') ? pUrl.params.get('q') : '',
-            fq = pUrl.params && pUrl.params.has('fq') ? "&fq="+pUrl.params.get('fq') : '',//'publicationDate_s:[2000 TO 2023]',
-            sourceHAL = "https://api.archives-ouvertes.fr/search/?q="+q+fq
-                +"&wt=json&indent=true&facet=true&facet.field=country_s&rows=0";
+            sourceHAL = "https://api.archives-ouvertes.fr/search/?q="+q
+              + "&rows=" + (pUrl.params.has('rows') ? +pUrl.params.get('rows') : "10000")
+              +"&fl=labStructAcronym_s,labStructName_s,labStructId_i,labStructAddress_s,labStructCode_s,labStructCountry_s,labStructType_s,labStructCode_s";
         
         this.init = function () {
-            mapImprove();
+          setData();
+        }
+
+        function setData(){
+          showLoader();       
+          d3.json(uri).then(data=>{
+              dataForVis = getDataForVis(data.response.docs);
+              console.log(dataForVis);
+              mapImprove();
+              hideLoader();
+          
+          });            
+        }
+
+        function getDataForVis(data){
+          let labs = [];
+          dataForVis=[];
+          //regroupement par laboratoire
+          data.forEach(d=>{
+            for (let i = 0; i < d.labStructId_i.length; i++) {
+              if(!labs[d.labStructId_i[i]]){
+                labs[d.labStructId_i[i]]=dataForVis.length;
+                dataForVis.push({
+                  "labStructId_i":d.labStructId_i[i],
+                  "labStructAcronym_s":d.labStructAcronym_s[i],
+                  "labStructName_s":d.labStructName_s[i],
+                  "labStructAddress_s":d.labStructAddress_s[i],
+                  "labStructCountry_s":d.labStructCountry_s[i],
+                  "labStructType_s":d.labStructType_s[i],
+                  "nb":0
+                });
+              }
+              dataForVis[labs[d.labStructId_i[i]]].nb++;
+            }
+          })
+          return dataForVis;
         }
 
         function mapImprove() {
