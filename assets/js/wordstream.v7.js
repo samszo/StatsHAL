@@ -890,8 +890,8 @@
                     .attr('d', area)
                     .style('fill', prevColor)
                     .attr("fill-opacity", 1)
-                    .attr("stroke", 'black')
-                    .attr('stroke-width', 0.3)
+                    //.attr("stroke", 'black')
+                    //.attr('stroke-width', 0.3)
                     .attr("topic", topic)
                     .attr("wordstream", true);
                 //Hide all other texts
@@ -942,7 +942,7 @@
                 .text(d => d)
                 .attr('font-size', legendFont)
                 .attr('dy', legendFont/2)
-                .attr('fill','white')
+                .attr('fill','black')
                 .attr("dx", legendFont);
 
             function styleAxis(axisNodes) {
@@ -955,16 +955,18 @@
                     .attr("stroke-opacity", 0);
 
                 axisNodes.selectAll('.tick text')
-                    .attr('fill', 'white')
+                    .attr('fill', 'black')
                     .attr('font-family', 'serif')
                     .attr('font-size', tickFont);
             }
 
             function showModal(d){
+                /*
                 config.m.setBody('<h3 class="text-white bg-dark">'+d.d.title_s[0]+'</h3>'
                 +'<iframe class="fiche" src="'+d.d.uri_s+'"/>');
                 config.m.setBoutons([{'name':"Close"}]);                
                 config.m.show();    
+                */
             }
             function styleGridlineNodes(gridlineNodes) {
                 gridlineNodes.selectAll('.domain')

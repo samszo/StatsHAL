@@ -1,5 +1,5 @@
 import {appUrl} from './appUrl.js';
-import {val-zip} from 'https://cdn.jsdelivr.net/npm/val-zip@latest/dist/val-zip.umd.js';
+import {posiColor} from './posiColor.js';
 
 export class mapFrance {
     constructor(params) {
@@ -7,56 +7,102 @@ export class mapFrance {
         this.id = params.id ? params.id : 'streamwords';
         this.cont = params.cont ? params.cont : d3.select("#chart");
         this.urlData = params.urlData ? params.urlData : false;
+        this.urlDataLabs = params.urlDataLabs ? params.urlDataLabs : "assets/data/labs.json";
         this.urlLabel = params.urlLabel ? params.urlLabel : "rien";
         this.data = params.data ? params.data : false;
+        this.dataForVis = [];
+        this.labs = [];
         const width = params.width ? params.width : 600;
         const height = params.height ? params.height : 600;
-        let legendAxis,svg,dataForVis
-            legendCellSize = 20,
+        const geocoder = new google.maps.Geocoder();
+        let legendAxis,svg,legendCellSize = 20,
             colors = ['#EAC7C7', '#E3B5B5', '#DDA2A2', '#D68F8F', '#CF7D7D', '#C86A6A', '#C15757', '#BE4E4E', '#BA4545', '#A83E3E', '#953737', '#823030', '#702929', '#5D2222', '#4A1C1C', '#381515'],
             pUrl = new appUrl({'url':new URL(me.urlData)}),
             q = pUrl.params && pUrl.params.has('q') ? pUrl.params.get('q') : '',
             sourceHAL = "https://api.archives-ouvertes.fr/search/?q="+q
               + "&rows=" + (pUrl.params.has('rows') ? +pUrl.params.get('rows') : "10000")
-              +"&fl=labStructAcronym_s,labStructName_s,labStructId_i,labStructAddress_s,labStructCode_s,labStructCountry_s,labStructType_s,labStructCode_s";
-        
+              +"&fl=labStructAcronym_s,labStructName_s,labStructId_i,labStructAddress_s,labStructCode_s,labStructCountry_s,labStructType_s,labStructCode_s",
+            refRegions=[];
         this.init = function () {
           setData();
         }
 
+        function geocode(request) {
+          geocoder
+            .geocode(request)
+            .then((result) => {
+              const { results } = result;        
+              return results;
+            })
+            .catch((e) => {
+              alert("Geocode was not successful for the following reason: " + e);
+            });
+        }
+
         function setData(){
-          showLoader();       
-          d3.json(uri).then(data=>{
-              dataForVis = getDataForVis(data.response.docs);
-              console.log(dataForVis);
-              mapImprove();
-              hideLoader();
-          
+          showLoader();
+          Promise.all([d3.json(sourceHAL),d3.json(me.urlDataLabs)]).then(rs=>{
+              me.labs = rs[1];
+              getDataForVis(rs[0].response.docs);          
           });            
         }
 
         function getDataForVis(data){
-          let labs = [];
-          dataForVis=[];
+          me.dataForVis=[];
           //regroupement par laboratoire
           data.forEach(d=>{
-            for (let i = 0; i < d.labStructId_i.length; i++) {
-              if(!labs[d.labStructId_i[i]]){
-                labs[d.labStructId_i[i]]=dataForVis.length;
-                dataForVis.push({
-                  "labStructId_i":d.labStructId_i[i],
-                  "labStructAcronym_s":d.labStructAcronym_s[i],
-                  "labStructName_s":d.labStructName_s[i],
-                  "labStructAddress_s":d.labStructAddress_s[i],
-                  "labStructCountry_s":d.labStructCountry_s[i],
-                  "labStructType_s":d.labStructType_s[i],
-                  "nb":0
-                });
+            if(d.labStructId_i){
+              for (let i = 0; i < d.labStructId_i.length; i++) { 
+                let k='labStructName_s';
+                if(d.labStructCountry_s && d.labStructCountry_s[i]=="fr" && d.labStructAddress_s && d.labStructAddress_s.length > i && d.labStructAcronym_s && d.labStructAcronym_s.length > i){
+                  let f = me.dataForVis.filter(l=>l[k]==d[k][i]);             
+                  if(f.length==0){
+                    let lab = me.labs.filter(l=>l[k]==d[k][i]);             
+                    if(lab.length){
+                      lab[0].nb=0;
+                      me.dataForVis.push(lab[0]);
+                    }else{
+                      me.dataForVis.push({
+                        "labStructId_i":[d.labStructId_i[i]],
+                        "labStructAcronym_s":d.labStructAcronym_s[i],
+                        "labStructName_s":d.labStructName_s[i],
+                        "labStructAddress_s":d.labStructAddress_s[i],
+                        "labStructCountry_s":d.labStructCountry_s[i],
+                        "labStructType_s":d.labStructType_s[i],
+                        "geo":false,
+                        "nb":0
+                      });  
+                    }
+                  }
+                  f = me.dataForVis.filter(l=>l[k]==d[k][i]);             
+                  f[0].nb++;
+                  let sf = f[0].labStructId_i.filter(sid=>sid==d.labStructId_i[i]);
+                  if(sf.length==0)f[0].labStructId_i.push(d.labStructId_i[i]);
+                }
               }
-              dataForVis[labs[d.labStructId_i[i]]].nb++;
             }
           })
-          return dataForVis;
+          //géocode les données abscentes
+          let geoPromise = [];
+          me.dataForVis.forEach((d,i)=>{
+            if(!d.geo){
+              geoPromise.push({'i':i,'f':geocoder.geocode({address:d.labStructAddress_s})});
+            }
+          })
+          if(geoPromise.length){
+            Promise.all(geoPromise.map(g=>g.f)).then(responses=>{
+              responses.forEach((r,i)=>{
+                me.dataForVis[geoPromise[i].i].geo=r.results[0];
+                let rg = r.results[0].address_components.filter(ac=>ac.types[0]=="administrative_area_level_1"),
+                  dep = r.results[0].address_components.filter(ac=>ac.types[0]=="administrative_area_level_2");
+                if(rg.length)me.dataForVis[geoPromise[i].i].region=rg[0].long_name;
+                if(dep.length)me.dataForVis[geoPromise[i].i].dep=dep[0].long_name;
+              })              
+              console.log(me.dataForVis);
+              mapImprove();
+            });      
+          }else
+            mapImprove();
         }
 
         function mapImprove() {
@@ -81,6 +127,7 @@ export class mapFrance {
           
             // Append the group that will contain our paths
             const regions = svg.append("g");
+            const dep = svg.append("g");
           
             svg.append("text")
                   .attr("x", (width / 2))
@@ -89,75 +136,53 @@ export class mapFrance {
                   .style("fill", "#D3B8B8")
                   .style("font-weight", "300")
                   .style("font-size", "16px")
-                  .text("Répartition des collaborations par région de : "+me.urlLabel);
-          
-            var promises = [];
-            promises.push(d3.json("assets/data/regions.geojson")); // Replace with the path to your regions data file
-            promises.push(d3.csv("assets/data/map-data.csv")); // Replace with the path to your collaborations data file
-          
-            Promise.all(promises).then(function (values) {
-              const geojson = values[0];
-              const csv = values[1];
-          
-              var features = regions
+                  .text("Répartition des collaborations en France de : "+me.urlLabel);
+                    
+            Promise.all([d3.json("assets/data/departements.geojson")]).then(function (values) {
+              const geojsonDep = values[0];
+              var featuresDep = dep
                 .selectAll("path")
-                .data(geojson.features)
+                .data(geojsonDep.features)
                 .enter()
                 .append("path")
+                .attr('fill','none')
+                .attr('stroke','white')                
                 .attr('id', d => "d" + d.properties.code)
                 .attr("d", path);
-          
-              // Quantile scales map an input domain to a discrete range, 0...max(collaborations) to 1...9
-              var quantile = d3.scaleQuantile()
-                .domain([0, d3.max(csv, e => +e.COLLABORATION)])
-                .range(d3.range(9));
-          
-              var legend = svg.append('g')
-                .attr('transform', 'translate(525, 150)')
-                .attr('id', 'legend');
-          
-              legend.selectAll('.colorbar')
-                .data(d3.range(9))
-                .enter().append('svg:rect')
-                .attr('y', d => d * 20 + 'px')
-                .attr('height', '20px')
-                .attr('width', '20px')
-                .attr('x', '0px')
-                .attr("class", d => "q" + d + "-9");
-          
-              var legendScale = d3.scaleLinear()
-                .domain([0, d3.max(csv, e => +e.COLLABORATION)])
-                .range([0, 9 * 20]);
-          
-              var legendAxis = svg.append("g")
-                .attr('transform', 'translate(550, 150)')
-                .call(d3.axisRight(legendScale).ticks(6));
-          
-              let collaborationsByRegionObj = d3.rollup(csv, v => d3.sum(v, d => +d.COLLABORATION), d => d.CODE_REG);
-              let regionsValues = Array.from(d3.group(csv, d => d.CODE_REG))
-               //faire la somme des collaboration
-              regionsValues.forEach(function (e, i) {
-                var totalCollaborations = collaborationsByRegionObj.get(e[0]);
-                d3.select("#d" + e[0])      
-                  .attr("class", "region q" + quantile(totalCollaborations) + "-9")
-                  .on("mouseover", function (event, d) {
-                    div.transition()
-                      .duration(200)
-                      .style("opacity", .9);
-                    div.html("<b>Région : </b>" + e[1][0].NOM_REGION + "<br>"
-                      + "<b>Collaborations : </b>" + totalCollaborations + "<br>")
-                      .style("left", (event.pageX + 30) + "px")
-                      .style("top", (event.pageY - 30) + "px");
-                  })
-                  .on("mouseout", function (event, d) {
-                    div.style("opacity", 0);
-                    div.html("")
-                      .style("left", "-500px")
-                      .style("top", "-500px");
-                  });
-              });
+
+              let collaborationsByDepObj = d3.rollup(me.dataForVis, v => d3.sum(v, d => +d.nb), d => d.dep),
+                depsValues = Array.from(d3.group(me.dataForVis, d => d.dep)),
+                heightLegende = 60,
+                contLegende = svg.append('g').attr('transform','translate(0 40)'),
+                pc = new posiColor({'data':me.dataForVis.map(d=>{return {'nb':d.nb,'dep':d.dep,'lib':'nb de collaboration'};}),'cont':contLegende
+                  ,'pFreq':'dep','pVal':'nb','pLib':'lib','frequency':true
+                  ,'width':width,'height':heightLegende}); 
+              depsValues.forEach(function (e, i) {
+                  let totalCollaborations = collaborationsByDepObj.get(e[0]),
+                  geoDep = geojsonDep.features.filter(g=>g.properties.nom==e[0]);
+                  if(geoDep.length){                  
+                    d3.select("#d" + geoDep[0].properties.code)      
+                      .attr("fill", pc.colors["nb de collaboration"](totalCollaborations))
+                      .on("mouseover", function (event, d) {
+                        div.transition()
+                          .duration(200)
+                          .style("opacity", .9);
+                        div.html("<b>Département : </b>" + e[0] + "<br>"
+                          + "<b>Collaborations : </b>" + totalCollaborations + "<br>")
+                          .style("left", (event.pageX + 30) + "px")
+                          .style("top", (event.pageY - 30) + "px");
+                      })
+                      .on("mouseout", function (event, d) {
+                        div.style("opacity", 0);
+                        div.html("")
+                          .style("left", "-500px")
+                          .style("top", "-500px");
+                      });
+                  }
+                });
+              hideLoader();       
             });
-          
+            
             // Refresh colors on combo selection
             d3.select("select").on("change", function () {
               d3.selectAll("svg").attr("class", this.value);

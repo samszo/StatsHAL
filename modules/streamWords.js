@@ -41,7 +41,7 @@ export class streamWords {
                 let w = width-margins.l-margins.r, h = height - margins.t - margins.b;
                 me.cont
                     .style("max-width", w + "px")
-                    .style("background-color","black");
+                    .style("background-color","white");
                 svg = me.cont.append('svg').attr("id", "mainSVG")    
                 svg.attr("width", Math.max(120 * dataForVis.length, w))
                 svg.attr("height", Math.max(200 * Object.keys(dataForVis[0].words).length, h));
