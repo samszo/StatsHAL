@@ -14,7 +14,7 @@ export class mapFrance {
         this.labs = [];
         const width = params.width ? params.width : 600;
         const height = params.height ? params.height : 600;
-        const geocoder = new google.maps.Geocoder();
+        //const geocoder = new google.maps.Geocoder();
         let legendAxis,svg,legendCellSize = 20,
             colors = ['#EAC7C7', '#E3B5B5', '#DDA2A2', '#D68F8F', '#CF7D7D', '#C86A6A', '#C15757', '#BE4E4E', '#BA4545', '#A83E3E', '#953737', '#823030', '#702929', '#5D2222', '#4A1C1C', '#381515'],
             pUrl = new appUrl({'url':new URL(me.urlData)}),
@@ -27,22 +27,38 @@ export class mapFrance {
           setData();
         }
 
-        function geocode(request) {
-          geocoder
-            .geocode(request)
-            .then((result) => {
-              const { results } = result;        
-              return results;
-            })
-            .catch((e) => {
-              alert("Geocode was not successful for the following reason: " + e);
-            });
+        const geocode = async (adresse, callback) => {
+          const url = new URL('http://api-adresse.data.gouv.fr/search')
+          const params = {q:cleanAdresse(adresse),limit:1}
+          Object.keys(params).forEach(
+            key => url.searchParams.append(key, params[key])
+          )
+          const response = await fetch(url);
+          let result = {}
+          if(!response.ok)result.error=response.statusText;     // => false        
+          else result = await response.json();
+          return result;
+        }
+
+        function cleanAdresse(a){
+          a = a.replace('- ',' ');
+          a = a.replaceAll('"','');
+          a = a.replaceAll('[','');
+          a = a.replaceAll(']','');
+          a = a.substring(0,199);
+          return a;
         }
 
         function setData(){
           showLoader();
           Promise.all([d3.json(sourceHAL),d3.json(me.urlDataLabs)]).then(rs=>{
               me.labs = rs[1];
+              /*nettoyage de labs
+              let newLabs = d3.sort(Array.from(d3.group(me.labs, d => d.labStructName_s)).map(d=>{ 
+                return d[1][0];
+              }), d => d.labStructName_s) 
+              console.log(newLabs);
+              */
               getDataForVis(rs[0].response.docs);          
           });            
         }
@@ -82,30 +98,51 @@ export class mapFrance {
               }
             }
           })
+          geocodeData();
+        }
+
+        const delay = ms => new Promise(res => setTimeout(res, ms));
+        async function geocodeData(deb=0, fin=49, wait=0){
+          if(wait) await delay(wait);
           //géocode les données abscentes
           let geoPromise = [];
-          me.dataForVis.forEach((d,i)=>{
-            if(!d.geo){
-              geoPromise.push({'i':i,'f':geocoder.geocode({address:d.labStructAddress_s})});
+          for (let i = deb; i < fin; i++) {
+            const d = me.dataForVis[i];
+            if(d && !d.geo){
+              //avec google geocoder geoPromise.push({'i':i,'f':geocoder.geocode({address:d.labStructAddress_s})});
+              geoPromise.push({'i':i,'f':geocode(d.labStructAddress_s)});
             }
-          })
+          }
           if(geoPromise.length){
             Promise.all(geoPromise.map(g=>g.f)).then(responses=>{
               responses.forEach((r,i)=>{
+                /*pour google
                 me.dataForVis[geoPromise[i].i].geo=r.results[0];
                 let rg = r.results[0].address_components.filter(ac=>ac.types[0]=="administrative_area_level_1"),
                   dep = r.results[0].address_components.filter(ac=>ac.types[0]=="administrative_area_level_2");
                 if(rg.length)me.dataForVis[geoPromise[i].i].region=rg[0].long_name;
                 if(dep.length)me.dataForVis[geoPromise[i].i].dep=dep[0].long_name;
-              })              
-              console.log(me.dataForVis);
-              mapImprove();
-            });      
-          }else
-            mapImprove();
-        }
+                */
+                if(r.error || r.features.length==0)console.log('ERREUR geocodeData',r);
+                else if (geoPromise[i].i!=0) {
+                  me.dataForVis[geoPromise[i].i].geo=r.features[0];                
+                  let ctx = r.features[0].properties.context.split(', ');
+                  me.dataForVis[geoPromise[i].i].region = ctx[2];
+                  me.dataForVis[geoPromise[i].i].dep = ctx[1];
+                  me.dataForVis[geoPromise[i].i].depnum = ctx[0];                                                   
+                } 
+              });
+              if(me.dataForVis.length > fin){
+                geocodeData(fin, fin+49, 2000);                
+              }else{
+                mapImprove();    
+              }
+            });
+          }else mapImprove();              
+        };
 
         function mapImprove() {
+          console.log(me.dataForVis);
           
             // Create a path object to manipulate geo data
             const path = d3.geoPath();
