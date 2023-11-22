@@ -167,6 +167,7 @@
         import {streamWords} from './modules/streamWords.js';
         import {mapWorld} from './modules/mapWorld.js';
         import {mapFrance} from './modules/mapFrance.js';
+        import {appUrl} from './modules/appUrl.js';
         
 
         let apiHAL="https://api.archives-ouvertes.fr/search", 
@@ -177,7 +178,17 @@
             rectHeader = d3.select('header').node().getBoundingClientRect(),
             rectResult = d3.select('#resultQuery').node().getBoundingClientRect(),
             rectDiag = d3.select('#nav-tabContent').node().getBoundingClientRect(),
-            hTableur = window.innerHeight-rectFooter.height-rectResult.top;
+            hTableur = window.innerHeight-rectFooter.height-rectResult.top,
+            dateField= 'publicationDate_s',
+            pUrl = new appUrl({'url':new URL(document.location)}),
+            urlQ = pUrl.params && pUrl.params.has('q') ? pUrl.params.get('q') : '';
+            
+        if(urlQ){
+            d3.select('#inpQuery').node().value= pUrl.toString();
+            execQuery(pUrl.toString());
+        }
+            
+
         //dimensionnement du tableur
         d3.select('#resultQuery').style('height',hTableur+"px");
         rectDiag.height = window.innerHeight-rectFooter.height-rectDiag.top;
@@ -207,8 +218,9 @@
             execQuery(d.query)
         }
         function execQuery(q){
-            queryHALold = queryHALold == "" ? apiHAL+q : queryHAL; 
-            queryHAL = apiHAL+q;
+            let url = q.substring(0,1)=="?" ?apiHAL+q : apiHAL+"?"+q 
+            queryHALold = queryHALold == "" ? url : queryHAL; 
+            queryHAL = url;
             d3.json(queryHAL).then(data=>{
                 let cont = d3.select('#resultQuery');
                 cont.selectAll('div').remove()

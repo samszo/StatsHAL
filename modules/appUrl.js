@@ -14,6 +14,10 @@ export class appUrl {
                 window.open(l, "_blank");
             });
         }
+        this.toString = function(){
+            const params = new URLSearchParams(me.url.search);
+            return params.toString()            
+        }
         this.changes = function (params){
             me.params = undefined;
             let sp = new URLSearchParams();
