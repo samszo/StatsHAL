@@ -44,11 +44,11 @@ export class dataHAL {
                             addDocActTag(ref,'docType_s');                            
                         })                        
                         if(finData==(i+1)){
-                            saveFile(me.dataAct,'dataHalAut.json');
-                            saveFile(me.dataDoc,'dataHalDepot.json');
-                            saveFile(me.dataTag,'dataHalKeyword.json');
-                            saveFile(me.dataOrg,'dataHalOrga.json');
-                            saveFile(me.dataActDocTag,'dataHalAutDepKey.json');
+                            saveFile(JSON.stringify(me.dataAct),'dataHalAut.json');
+                            saveFile(JSON.stringify(me.dataDoc),'dataHalDepot.json');
+                            saveFile(JSON.stringify(me.dataTag),'dataHalKeyword.json');
+                            saveFile(JSON.stringify(me.dataOrg),'dataHalOrga.json');
+                            saveFile(JSON.stringify(me.dataActDocTag),'dataHalAutDepKey.json');
                             /*
                             console.log(me.dataAct);
                             console.log(me.dataDoc);
