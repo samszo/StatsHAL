@@ -123,8 +123,9 @@ export class mapFrance {
                 if(rg.length)me.dataForVis[geoPromise[i].i].region=rg[0].long_name;
                 if(dep.length)me.dataForVis[geoPromise[i].i].dep=dep[0].long_name;
                 */
-                if(r.error || r.features.length==0)console.log('ERREUR geocodeData',r);
-                else if (geoPromise[i].i!=0) {
+                if(r.error || r.features.length==0){
+                  console.log('ERREUR geocodeData',r);
+                }else if (geoPromise[i].i!=0) {
                   me.dataForVis[geoPromise[i].i].geo=r.features[0];                
                   let ctx = r.features[0].properties.context.split(', ');
                   me.dataForVis[geoPromise[i].i].region = ctx[2];

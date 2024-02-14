@@ -1,0 +1,4310 @@
+[
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.info"
+    },
+    {
+        "type": "language_s",
+        "val": "fr"
+    },
+    {
+        "type": "submitType_s",
+        "val": "file"
+    },
+    {
+        "type": "docType_s",
+        "val": "COMM"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs"
+    },
+    {
+        "type": "submitType_s",
+        "val": "notice"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "sdv.neu.pc"
+    },
+    {
+        "type": "language_s",
+        "val": "en"
+    },
+    {
+        "type": "docType_s",
+        "val": "ART"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Instrumentalisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Écosystème documentaire"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Régulation algorithmique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Communauté épistémique"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "scco.psyc"
+    },
+    {
+        "type": "docType_s",
+        "val": "COUV"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.psy"
+    },
+    {
+        "type": "docType_s",
+        "val": "POSTER"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-iu"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-hc"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Profils motivationnels aging"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Adaptation to nursing homes"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Older people"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Latent profile analysis"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Leisure activities"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Motivational profiles"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Vieillissement"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Adaptation aux centres d'hébergement pour personnes âgées"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Personnes âgées"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analyse de profils latents"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Activités de loisirs"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Alceste method"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Evaluation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Health care program"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Interview analysis"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Qualitative analysis"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Recovery"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Schizophrenia"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Vocabulary"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "sdv"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pensée critique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Argumentation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Controverse"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Genèse instrumentale"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Schème"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Intelligence végétal crible"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info"
+    },
+    {
+        "type": "docType_s",
+        "val": "OUV"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Big data"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information literacy"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Online learning environment"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Open educational resources"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ontology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Organisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Territoire"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Temps"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analyse multi-scalaire"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Développement durable"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "scco"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cognitive evaluation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Activity"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Complexity index"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Software comparison"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Évaluation cognitive"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Activité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Indice de complexité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Comparaison de logiciel"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "scco.ling"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "scco.neur"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Flexibilité cognitive"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Catégorisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Problèmes de proportionalité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Éducation prioritaire"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-ai"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.eiah"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-ne"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-lg"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Collaborative classification"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Complex system"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Emergence"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Multi-agent system"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital Humanities"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital Library"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digitization"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital Collections"
+    },
+    {
+        "type": "keyword_s",
+        "val": "French Internet Archives"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Humanités numériques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Bibliothèque numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Numérisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Collections numériques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Archives de l'Internet"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Archives"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Numériques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Valorisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Médiation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Work use lab"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Learning process"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Design project"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Capability and power to act"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Attachment"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Internal working models"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Intellectual disability"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Childhood"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Down syndrome"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Gallica"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ouverture des données"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Données patrimoniales"
+    },
+    {
+        "type": "submitType_s",
+        "val": "annex"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-db"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-ir"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.langue"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-tt"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-wb"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Noise disturbance"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Reading task performance"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Peak noise"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Reading speed"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Emergent events"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "spi"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Innovative product development"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Forecasting medicine-based product success"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Multidimensional Neural Networks"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Decision support"
+    },
+    {
+        "type": "keyword_s",
+        "val": "COVID - 19"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "chim"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.edu"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Data protection and privacy"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital ethics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Internet frontiers"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Multicultural communication"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Social interactions"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Visual communication"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Protection des données personnelles"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Communication multiculturelle"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ethique du numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Frontières d’Internet"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sémiotique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Communication imagée"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Virtual reality"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Serious game"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Visual fatigue"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Headmounted display"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cyclical stereoscopy Computing methodologies Virtual reality-Perception"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Software and its engineering Interactive games"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "scco.comp"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-gr"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Experience"
+    },
+    {
+        "type": "keyword_s",
+        "val": "First person perspective"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Enaction"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Micro-phenomenology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Situated cognition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Socio-cultural approaches"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Open science"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Open peer-review"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Évaluation par les pairs"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Évaluation ouverte"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Médiatisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Mediatisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Science ouverte"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.hisphilso"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Fake news"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Critical thinking"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Scheme"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Informational habitus"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Instrumental approach"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-cy"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Participatory ergonomics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Industry of the future"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Exposure situation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Measurement"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Metal additive manufacturing"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Semantic approximation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Overextension"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analogy"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Abstract encoding"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analogical extension"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Language acquisition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Relational category"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Motivation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Self-determination theory"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Achievement goal theory"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Self-efficacity theory"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cognitive flexibility"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Leraning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Education"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Biodiversité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Activité humaine"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Facial Recognition Software"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Facial Data"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Face Occlusion"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Face Representation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Interface Logics"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.stat"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-ti"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.art"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Séquentialité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Théorie de l’apraisal"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Évaluation de l’information"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Risques routiers"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Influence authority"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Social recognition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Legitimacy"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Visibility"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Reputation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Influence"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Autorité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Reconnaissance"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Légitimité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Visibilité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Réputation"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "sdv.neu.sc"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Rontiers"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital network frontier"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cyberespace"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Challengers and impacts of ICT"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Transdisciplinarity"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Frontière"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Frontière-réseau numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Enjeux et impacts des TIC"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Transdisciplinarité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Forecasting product revenues"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Neural networks"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information systems"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analysis of patents"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Patents Data"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Lien"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Concepts"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sens"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Appropriation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Recherche"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Carte conceptuelle"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Meaning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Research"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Internet of things"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Implicit learning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Children"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Letter"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Motor Reading"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Apprentissage implicite"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Enfants"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Lettres"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Motricité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Lecture"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital technology practices"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information watch"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital transformation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Mid-size companies"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital divide"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital inequalities"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital borders"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital inclusion"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Uses"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Fracture numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Inégalités numériques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Frontières numériques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Inclusion numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Usages"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.socio"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Reactive flexibility"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Spontaneous flexibility"
+    },
+    {
+        "type": "keyword_s",
+        "val": "First graders"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Individual differences"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Correlational analyses"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Factorial analyses"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Latent structure"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital technology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Extended cognition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Psychometrics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Technologie numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cognition étendue"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Psychométrie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Virtual exhibition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Editorialization"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital mediation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Heritage enhancement"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Online cultural mediation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Exposition virtuelle"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Éditorialisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Médiation numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Valorisation patrimoniale"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Médiation culturelle en ligne"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Reading development"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Literacy abilities"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Parents’ education level"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Household income"
+    },
+    {
+        "type": "language_s",
+        "val": "ar"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Formation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Capabilités"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Instrument"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ressources"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Travail"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Literacy Screening Reading Preschool Priority education networks Elfe cohort"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Littératie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Repérage"
+    },
+    {
+        "type": "keyword_s",
+        "val": "École maternelle"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Réseau d’éducation prioritaire"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cohorte Elfe"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "sdv.spee"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analogical retrieval"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Structural similarity"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Story-recall task"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Vie privée"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Exposition de soi"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Privacy concern"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Schème de décision"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Node states scheduling"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Possibility theory"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Wireless sensor network"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Area coverage"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Fuzzy set"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ergonomie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Conditions de travail"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Durabilité sociale"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Santé-sécurité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Parent–child contact"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Maltreatment"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Out-of-home care"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Suicidal risk"
+    },
+    {
+        "type": "docType_s",
+        "val": "REPORT"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pratiques des technologies"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Conduite du changement"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pratiques organisationnelles"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Communication organisationnelle"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Gestion"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.gestion"
+    },
+    {
+        "type": "keyword_s",
+        "val": "TRIANGULATION DE METHODES"
+    },
+    {
+        "type": "keyword_s",
+        "val": "BINOME"
+    },
+    {
+        "type": "keyword_s",
+        "val": "RESSOURCE INFORMATIONNELLE"
+    },
+    {
+        "type": "keyword_s",
+        "val": "ANALYSE DE L'ACTIVITE"
+    },
+    {
+        "type": "keyword_s",
+        "val": "TRANSPORT"
+    },
+    {
+        "type": "keyword_s",
+        "val": "SIGGRAPH"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Computer graphics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Interactive techniques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Art-science-humanities"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Discoverability"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital practices"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Audience studies"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Découvrabilité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pratiques numériques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Études de publics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Modélisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Patrimoine"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Flux"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Perception"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Expérience émotionnelle"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Affects"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Touristes"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Locaux"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Arithmetic teaching"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Standard algorithm"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Mental calculation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Addition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Subtraction"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Gender difference"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital library"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital collections"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Assessment"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Development"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Hostile attribution bias"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Social cognition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Matrix of change"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Intermediate-sized companies"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Entreprises de taille intermédiaire"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Matrice du changement"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Transformation numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pratiques des technologies numériques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Travail Collectif"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Perte d'autonomie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Aide à domicile"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Prévention"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cognitive strategies"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Knowledge representation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Learning strategies"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Mathematics learning and teaching"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Problem solving"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Usage of digital technologies"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Social networking site"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital communication"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information system"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Usages des technologies numériques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Réseaux sociaux numériques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Communication numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ontologies"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Système d'information"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pictorial semiotics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Plastic language"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Visual computing"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital semiotics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Data exploration"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Bioinformatics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Artificial Intelligence"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Internet of Things"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Healthcare"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Big Data"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Bioinformatique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Intelligence Artificielle"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Internet des Objets"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Santé"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Processus individuation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital Storytelling"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Civic values"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Social innovation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Citizen expression"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Game"
+    },
+    {
+        "type": "keyword_s",
+        "val": "StoryCubes"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Narration"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Participatory design"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Psychology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Statistics methods"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Statistiques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Jamovi"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Psychologie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Communication internationale"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Traitement de la communication"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Traduction automatique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Dignité humaine"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Médias numériques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Mathematical cognition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Mental models"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Semantics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Encoding effects"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-cl"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Recyclage"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Economie verte"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital storytelling"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Narration numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Innovation sociale"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Valeurs civiques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Expression citoyenne"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Arithmetic writing"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Arithmetic comprehension"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Second grade"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Equal sign"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Free-recall reminding paradigm"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Accessibilité numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Situations de handicap"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Interface"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Interculturality"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Postcolonial"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Interculturalité"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "sdv.mhep.psm"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Safety"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Maintenance"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Conception"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Critical incident technique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Expérience-utilisateur"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Induction"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Méthodes qualitatives"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Approches compréhensives"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Intelligence artificielle"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Machine learning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Deep learning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Semantic texte mining"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Plateformes"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-ds"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-it"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-si"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Arithmetic word problems"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Eye tracking"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Competences"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Activity theory"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Workplace learning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Work experience"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Health care service"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Device  crafstmanship  cinema  history  screen"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.hist"
+    },
+    {
+        "type": "keyword_s",
+        "val": "EMI"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Parentalité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analogical cognition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Similarity"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Salience"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Context-sensitivity"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Concept"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.phil"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Évaluation d’un dispositif pédagogique – Flexibilité cognitive – Résolution de problèmes – Catégorisation – Raisonnement mathématique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Zoosémiotique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sciences de l'informatin et de la communication"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Culture et communication"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Litérature"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Student experience"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Guidance path"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Handicap"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Focus group"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Power to act"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Reflexivity"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Expérience étudiante"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Orientation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pouvoir d’agir"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Réflexivité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Multimodality"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sensory-motor"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Letters"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Reading"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Writing"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Embodied cognition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Multimodalité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sensori-moteur"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Écriture"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Éducation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cognition incarnée"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Experiential learning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Safety training"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Training techniques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Work based learning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Simulation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Intevention-training"
+    },
+    {
+        "type": "keyword_s",
+        "val": "MSD prevention"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cultura digital"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Interfaz cultural"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Semiótica"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Materialidad"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Prototipo informacional digital culture"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cultural interface"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Semiotics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Materiality"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Informational prototype"
+    },
+    {
+        "type": "language_s",
+        "val": "es"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analysis of activity Children Instrumental theory Creativity Tangible interface Narrative"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analysis of activity"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Instrumental theory"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Creativity"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Tangible interface"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Narrative"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Attachement"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Fonction réflexive"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Mentalisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Etudes longitudinales"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Viticulture"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pesticide exposures"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sprayer"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ergotoxicologic"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Instrumental geneses"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Exposition aux pesticides"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pulvérisateur"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ergotoxicologie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Genèses instrumentales"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Handedness Manual specialization Development Hand movement Hemispheric specialization Newborns"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Network"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Media Education"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Crawl"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Graphs"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Corpus"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Réseau"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Education aux médias"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Graphes"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Université"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Dispositif"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Phénoménologie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Verbalisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Acte créatif"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Créativité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Drawing creativity subjectivation intermediate object transitional instrument reflexivity explicitation interview nuclear industry"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Drawing"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Subjectivation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Intermediate object"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Transitional instrument"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Explicitation interview"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Nuclear industry"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "spi.gciv.risq"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Compréhension"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Inférence"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Activation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Validation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Environnement capacitant"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Engagement"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Capabilité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Intelligence Articifielle"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Post-numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Art et Science"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Art & Technology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Neural networks Neuroevolution Phylogenetic replay learning Deep learning Vanishing gradient"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Neuroevolution"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Phylogenetic replay learning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Vanishing gradient"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Musées Europe identité politique patrimoine European Identity through the European Museums' websites Museums Europe identity politics heritage"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Musées"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Europe"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Identité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Politique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Patrimoine European Identity through the European Museums' websites Museums"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Identity"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Politics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Heritage"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ville innovations développement durable"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Données Massives"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Mutations numériques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Hyperurbain"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "sde.mcg"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information risk"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Top managers"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information management"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information behavior"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital culture"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital Art"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pensée informatique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analogie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Charge Cognitive"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Résolution de problème"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Transfert"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Apprentissage"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Academic journal"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital edition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Scientific edition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital writing"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Stylo"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Revue savante"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Édition numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Édition scientifique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Écriture numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Biopiratrie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Patrimoine immatériel"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Réseaux sociaux"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Visualisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Visualisation des données"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.museo"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sciences de l'Information"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Edition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Humanité numériqe"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Post-digital"
+    },
+    {
+        "type": "keyword_s",
+        "val": "E-Learning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital Technologies"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Distance learning & training"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Co-conception"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Collaboration"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analyse de l'activité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Démarche centrée utilisateurs"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Art Numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Computer Arts"
+    },
+    {
+        "type": "keyword_s",
+        "val": "UX Design"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Design de l'Experience"
+    },
+    {
+        "type": "keyword_s",
+        "val": "User Experience design"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Illusion Optique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cultural Heritage"
+    },
+    {
+        "type": "keyword_s",
+        "val": "HyperUrban"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Augmented Reality"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Museum"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Human Mediatized Interactions"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-mm"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.archi"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.droit"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Hyperheritage"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Patrimoine numerique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Design"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Design de l'expérience"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Patrimoine Augmenté"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "sde"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Communication"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Conversational agents"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Personality"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Personality-adaptive chatbot"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Chatbot"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Human–computer interaction"
+    },
+    {
+        "type": "keyword_s",
+        "val": "HyperUrbain"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ville Post-Numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ville numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Art numerique"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-ia"
+    },
+    {
+        "type": "keyword_s",
+        "val": "AE dans le champ de l'apprentissage étudiant"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ingénierie coopérative"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Formation et usages du numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Post-Numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Smart City"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ville Sociale"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Molière"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Patrimoine - Heritage"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Gestion du patrimoine"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Patrimoine Numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Machine Learning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "NLP"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Transformers"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Urbanisme"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Espace Public"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Espace Public Numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Social Network"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Micro blogging"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Micro blogging data"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital Heritage"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Intangible Cultural heritage"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Data Visualisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Illusion optique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "UX"
+    },
+    {
+        "type": "keyword_s",
+        "val": "User Experience Design"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.musiq"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Visualiation de données"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Graphes and networks"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Social networks analysis"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Intelligence artficielle"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Web cartography"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Data visualization"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital ethnography"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital ethnography Network science Collective intelligence"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ethnographie numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital methods"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Methodes numeriques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Hybride model"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Innovation pedagogique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cartographie -- Informatique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Web cartographie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analyse de réseau sociaux"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-cc"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-et"
+    },
+    {
+        "type": "keyword_s",
+        "val": "01Design"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital Design"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Conception numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Conception assisté par ordinateur"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Processus de conception"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Therapeutic education"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Families"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Resources"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Experience’s development"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Mediation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Éducation thérapeutique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Familles"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Développement de l’expérience"
+    },
+    {
+        "type": "keyword_s",
+        "val": "CAC7"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Computer Art Congress"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Media Art"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Post-Digital Age"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Post-Digital Art"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Metaverse"
+    },
+    {
+        "type": "keyword_s",
+        "val": "AI"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Post-Digital"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Patrimoine numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Data visualisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Medecine traditionnelle"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "info.info-bt"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information security"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sense-making"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sécurité de l'information"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Risque informationnel"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Comportements sécuritaires"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Dirigeant"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sense-making methodology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Manuscrit Arabe"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Amazigh"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Art"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ville intelligente"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Gouvernance"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Urbanisme environnement"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Données"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ville sociale"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Design Science"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Design Research"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Design Research Methodologies"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Design Technology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Architectural Design"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Design Process"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Engineering & Technology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Smart technology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Heritage digital humanities"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Wiki"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Acquisition des données"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Collecte des données"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Traitement automatique de corpus"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Traitement de Langage Naturel"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Wikimedia"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cultural heritage CH"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Human - Machine Interaction"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Human Computer Integration"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information Sharing Behaviour"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Top Managers"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital Environment"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sense-Making"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Telecommunication sector"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Transfer"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Educational Psychology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cognitive Psychology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Problem-solving"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Computational Thinking"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Contre-espace"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Méthodologie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Queer"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Potentiel"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Genre"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Social"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ville"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ville post-numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Urbanités"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Avatar"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Self-representation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Immersive Mixed Reality"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Point of view"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Subjective effects"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Web"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Accessibility"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Web accessibility"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Bibliometric Analysis"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Scientific production"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ergonomics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "HOF"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Aeronautical maintenance"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sécurité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "FOH"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Maintenance aéronautique"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.info.theo"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.info.hype"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.info.cine"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pedagogies"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Macedo-Rouet M Pérez A Potocki A Rouet J-F 2022 Les adolescents face aux défis de l'information numérique  une intervention pour promouvoir l'évaluation critique des sources Éducation & Formation e-317 69-79"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Macedo-Rouet"
+    },
+    {
+        "type": "keyword_s",
+        "val": "M"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pérez"
+    },
+    {
+        "type": "keyword_s",
+        "val": "A"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Potocki"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Rouet"
+    },
+    {
+        "type": "keyword_s",
+        "val": "J-F 2022 Les adolescents face aux défis de l'information numérique  une intervention pour promouvoir l'évaluation critique des sources Éducation & Formation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "E-317"
+    },
+    {
+        "type": "keyword_s",
+        "val": "69-79"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Multisensory training"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sonification"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Handwriting"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Alphabetic principle"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Kindergarten"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Heritage valorization"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cultural storytelling"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Storytelling transmedia"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Storytelling culturel"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Narration transmédia"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Média"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Polémique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Economie des médias"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Research Network"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Hydrology of Media"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Art Science and Technology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "French web archives"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Open data"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Heritage data"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Metadata"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Métadonnées"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Archives du web"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Communauté"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ecriture numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Mémoire"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ateliers coopératifs"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Fragilisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Parcours"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Forecasting technology success"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Patent analysis"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital book"
+    },
+    {
+        "type": "keyword_s",
+        "val": "E-book"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Enhanced book"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Extanded book"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Hyperbook"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Livre numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Livre enrichi"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Livre augmenté"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Hyperlivre"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Work"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Harsh working conditions"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Gender"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Waste sorting"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pénibilité du travail"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Déchets"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Objet connecté"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Internet des objets IdO"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Internet of Everything IoE"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Interopérabilité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ecosystème de l’IdO"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Data science"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Données privées"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Données publiques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ethique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Blockchain"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Langage"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Bilingue"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ocular dominance"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Monocular augmented reality device"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Binocular rivalry"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Attention"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "spi.opti"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Tablettes numériques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Raisonnement mathématique"
+    },
+    {
+        "type": "language_s",
+        "val": "pt"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ebook"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital reading"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital enclosure"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Lecture numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Clôture numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Candide"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Stress"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Self-regulation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Distance learning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Face-to-face learning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Covid"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sustainable development"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Work activity analysis"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Territory / territorialization"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Waste management"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Recycling"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ergonomics of activity"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Conception in use"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Participatory Design"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ergonomie de l’activité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Conception dans l’usage"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Développement"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Conception participative"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Enfant"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Approche instrumentale"
+    },
+    {
+        "type": "keyword_s",
+        "val": "TIC"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Inclusion"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Retraitées"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Flexibilité adaptative"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Flexibilité spontanée"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Développement cognitif"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Incidents critiques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Aéronautique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cognitive flexibility school-based intervention categorization evidence-based education arithmetic word problems"
+    },
+    {
+        "type": "keyword_s",
+        "val": "School-based intervention"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Categorization"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Evidence-based education"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Resilience engineering"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Activity ergonomics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Depression"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Rumination"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Aging"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Child maltreatment"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Childhood sexual abuse"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Parental reflective functioning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Parenting stress"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Museum visit"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cultural mediation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital device"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Creative activity"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Historical-cultural perspective"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Situated cognitive anthropology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Constructivist epistemology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "NAM model"
+    },
+    {
+        "type": "keyword_s",
+        "val": "MARO model"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Remote Viewing"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cybernétique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Feedback"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Continuum intuitif"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cognition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Intelligence intuition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Instruments"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pragmatic concepts"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cardio-pediatrics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Concepts pragmatiques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cardiopédiatrie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Écriture scientifique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Conversation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Protocole"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Revue scientifique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Educational chatbot"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Learning experience"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Virtual tutor"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Conversational agent"
+    },
+    {
+        "type": "keyword_s",
+        "val": "E-learning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Chatbot's usability"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Unmanned Aerial Vehicles UAVs Energy consumption Completion time Path planning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Unmanned Aerial Vehicles UAVs"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Energy consumption"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Completion time"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Path planning"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Production du handicap"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Université Paris 8"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Environnement"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Questionnaire"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Frontière numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Architecture"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Conception architectural"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Habitat"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Réalité augmenté"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Arts du spectacle"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Art et technologie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Spectateur augmenté"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Design Numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Dépendance personnes agées"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Travail collectif"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Officer"
+    },
+    {
+        "type": "keyword_s",
+        "val": "General staff"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Military leader"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Dedicated discursive spaces"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Relationships"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Responsibility"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Trust"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Managerial communication"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Confiance"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Communication managériale"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Officier"
+    },
+    {
+        "type": "keyword_s",
+        "val": "État-major"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Chef militaire"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Espaces dédiés au discours"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Relation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Responsabilité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information sharing"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Emergency physicians"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Crisis"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Covid-19"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital transition"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Organizational communication"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Content analysis"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Social network analysis"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Twitter"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Transition numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analyse de contenu"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Analyse de réseaux sociaux"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Visualisation de données"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Reflective process emotion guidance university student explicitation interview"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Processus de réflexivité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Émotion"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Étudiant universitaire"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Entretien d’explicitation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Smart city"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Hyperurban"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital city"
+    },
+    {
+        "type": "keyword_s",
+        "val": "XR"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ville Numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Esprit critique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Modélisation des controverses"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cartographie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Expérimentation pédagogique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Etude qualitative"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Epistemolgy"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Intelligence Artificielle IA"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Mutation technologique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Brésil"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Rue"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Évaluation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Participation sociale"
+    },
+    {
+        "type": "keyword_s",
+        "val": "TIC Technologie de l'Information et de la Communication"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Normes ISO"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Convergence numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Normalisation de l’internet"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Humanités Numériques cartographie formations métadonnées modélisation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Intervention"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Genesis"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Deliberation"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Genèses"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Délibération"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Heritage collections"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Psychologie du développement"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Petite enfance"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Etude longitudinale"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Time"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Public transport"
+    },
+    {
+        "type": "keyword_s",
+        "val": "RESSOURCES"
+    },
+    {
+        "type": "keyword_s",
+        "val": "TEMPS"
+    },
+    {
+        "type": "keyword_s",
+        "val": "INFORMATION DES PASSAGERS"
+    },
+    {
+        "type": "keyword_s",
+        "val": "TRANSPORT EN COMMUN"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Web sémantique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Wiktionnaire"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Recherche collaborative"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sémantique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information behaviour"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information seeking"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Information sources"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cadres dirigeants"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Pratiques informationnelles"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Recherche d’informations"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Sources d’informations"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Interface design"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Interface theories"
+    },
+    {
+        "type": "keyword_s",
+        "val": "SeMiotics"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Instrmental psychology"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Human-computer interaction"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Design d'interfaces"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Théories de l'interface"
+    },
+    {
+        "type": "keyword_s",
+        "val": "SéMiotique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Psychologie instruMentale"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Interaction hoMMe-Machine"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Littérature numérique"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Projet littéraire"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Archives de l'internet"
+    },
+    {
+        "type": "domainAllCode_s",
+        "val": "shs.litt"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Digital humanities"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Cartography"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Education program"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Modeling"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Humanités Numériques"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Formations"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Travail humain"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Philosophie"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ergonomie de l'activité"
+    },
+    {
+        "type": "keyword_s",
+        "val": "Ergologie"
+    }
+]

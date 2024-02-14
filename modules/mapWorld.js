@@ -16,12 +16,15 @@ export class mapWorld {
             q = pUrl.params && pUrl.params.has('q') ? pUrl.params.get('q') : '',
             fq = pUrl.params && pUrl.params.has('fq') ? "&fq="+pUrl.params.get('fq') : '',//'publicationDate_s:[2000 TO 2023]',
             sourceHAL = "https://api.archives-ouvertes.fr/search/?q="+q+fq
-                +"&wt=json&indent=true&facet=true&facet.field=country_s&rows=0";
-        
+                +"&wt=json&indent=true"
+                +"&facet=true&facet.field=country_s"
+                + "&rows=" + (pUrl.params.has('rows') ? +pUrl.params.get('rows') : "10000")
+                +"&fl=labStructAcronym_s,labStructName_s,labStructId_i,labStructCode_s,labStructCountry_s,labStructType_s,labStructCode_s";
+  
+
         this.init = function () {
             mapImprove();
         }
-
         function mapImprove() {
             me.cont.select('svg').remove();
             svg =me.cont.append("svg")
@@ -66,17 +69,33 @@ export class mapWorld {
         
             Promise.all(promises).then(function(values) {
                 const geojson = values[0];
-                let scores = values[1], halData = values[2], pays = halData.facet_counts.facet_fields.country_s;
+                let scores = values[1], halData = values[2], 
+                pays = [];
+                for (let i = 0; i < halData.facet_counts.facet_fields.country_s.length; i++) {
+                    let nb = halData.facet_counts.facet_fields.country_s[i+1],
+                    c = halData.facet_counts.facet_fields.country_s[i];
+                    if(nb && c){
+                        if(!pays[c])pays[c]=0;
+                        pays[c]+=nb;    
+                    }
+                    i++;            
+                };
+                halData.response.docs.forEach(p=>{
+                    if(p['labStructCountry_s']){
+                        p['labStructCountry_s'].forEach(c=>{
+                            if(!pays[c])pays[c]=0;
+                            pays[c]++;
+                        })    
+                    }
+                });
                 scores.forEach(s=>s.score=0);
-                for (let i = 0; i < pays.length; i++) {
-                    let nb = pays[i+1],
-                    p = scores.filter((s,j)=>s.code==pays[i].toUpperCase());
+                for (const c in pays) {
+                    let p = scores.filter(s=>s.code==c.toUpperCase());
                     //ne pas prendre en compte les données de la France 
                     //afin de liser les statistiques 
                     if(p.length){
-                        if(pays[i]!='fr')p[0].score=nb;
+                        if(c!='fr')p[0].score=pays[c];
                     }
-                    i++;            
                 }
                 //supprime les pays à 0
                 scores.forEach((s,i)=>{if(s.score==0)delete scores[i];});

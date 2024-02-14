@@ -168,10 +168,11 @@
         import {mapWorld} from './modules/mapWorld.js';
         import {mapFrance} from './modules/mapFrance.js';
         import {appUrl} from './modules/appUrl.js';
-        
+        import {dataHAL} from './modules/dataHAL.js';        
 
         let apiHAL="https://api.archives-ouvertes.fr/search", 
-            queryHAL = "", queryHALold = "", ws=false, wm = false, 
+            queryHAL = "", queryHALold = "", ws=false, wm = false,
+            dataRefs = [], 
             activeDiag = "nav-wordstream-tab",
             m=new modal({'size':'modal-lg'}), hotRes=false, hotDocs=false,
             rectFooter = d3.select('footer').node().getBoundingClientRect(),
@@ -209,14 +210,17 @@
             activeDiag = event.target.id;
             setDiag();
         })
-
         
         function showQuery(e,d,q){
             showLoader();
             d3.select('#inpQuery').node().value= d.query;
             d3.select('#inpQueryLabel').node().value= d.label;            
-            execQuery(d.query)
+            if(d.query)execQuery(d.query);
+            if(d.csv){
+                let dtH = new dataHAL({'csv':d.csv});
+            }
         }
+
         function execQuery(q){
             let url = q.substring(0,1)=="?" ?apiHAL+q : apiHAL+"?"+q 
             queryHALold = queryHALold == "" ? url : queryHAL; 

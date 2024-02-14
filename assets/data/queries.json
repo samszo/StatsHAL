@@ -1,6 +1,7 @@
 [
-    {"label":"Publications du Laboratoire Paragraphe","query":"?q=structId_i:(1087002 OR 1003467 OR 39850 OR 1172983)&rows=10000&fq=publicationDateY_i:[2020 TO *]"},
-    {"label":"Publications de l'Axe DiNuPUMoC","query":"?q=authIdHal_s:(imad-saleh OR philippe-bootz OR everardo-reyes-garcia OR maria-ines-laitano OR hakim-hachour OR nicolas-sauret OR arnaud-laborderie OR samuel-szoniecky) OR authIdHal_i:(1027582 OR 953983)&fq=publicationDateY_i:[2020 TO *]&rows=10000"},
+    {"label":"Publications du Laboratoire Paragraphe","query":"?q=structId_i:(1087002 OR 1003467 OR 39850 OR 1172983)&rows=10000&fq=publicationDateY_i:[2018 TO *]"},
+    {"label":"Extractions des données HAL du Laboratoire Paragraphe","csv":"https://docs.google.com/spreadsheets/d/e/2PACX-1vTDhO04Reyb4XnBZpaoQ2x6IHeMA74J_YUcKXi_bDru3aSAxy5eK5Rv2zS8_GVZDSZyZSfHw2P1Apap/pub?gid=0&single=true&output=csv"},    
+    {"label":"Publications de l'Axe DiNuPUMoC","query":"?q=authIdHal_s:(imad-saleh OR philippe-bootz OR everardo-reyes-garcia OR maria-ines-laitano OR hakim-hachour OR nicolas-sauret OR arnaud-laborderie OR samuel-szoniecky OR agonzalez58)&fq=publicationDateY_i:[2018 TO *]&rows=10000"},
     {"label":"Publications de Samuel Szoniecky","query":"?q=authIdHal_s:samuel-szoniecky&rows=10000&fl=authIdHal_s,keyword_s,title_s,docid,uri_s,producedDate_s,publicationDate_s&sort=publicationDate_s asc"},
     {"label":"Espaces sonores","query":"?q=espaces sonores&fq=publicationDateY_i:[2020 TO *]&rows=10000"},    
     {"label":"Ecosystème de connaissances","query":"?q=écosystème de connaissances&fq=publicationDateY_i:[2020 TO *]&rows=10000"}    
