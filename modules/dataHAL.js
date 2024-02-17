@@ -4,7 +4,13 @@ export class dataHAL {
         this.dataAct = [];
         this.dataDoc = [];
         this.dataTag = [];
+        this.dataOrg = [];
         this.dataActDocTag = [];
+        this.urlAct = params.urlAct;
+        this.urlDoc = params.urlDoc;
+        this.urlTag = params.urlTag;
+        this.urlOrg = params.urlTag;
+        this.urlActDocTag = params.urlActDocTag;
         this.fields = params.fields ? params.fields : "&fl=authIdHal_s,halId_s,keyword_s,title_s,submitType_s,subTitle_s,language_s,abstract_s,domainAllCode_s,docid,uri_s,producedDate_s,publicationDate_s,authFirstName_s,authLastName_s,authStructId_i,docType_s";
         this.csv = params.csv;
         this.showLoader = params.showLoader;
@@ -16,7 +22,33 @@ export class dataHAL {
     
         this.init = function () {
             if(me.csv)getDataByRef();
+            let pJson= [];
+            if(me.urlAct)pJson.push({'o':'dataAct','u':d3.json(me.urlAct)});
+            if(me.urlDoc)pJson.push({'o':'dataDoc','u':d3.json(me.urlDoc)});
+            if(me.urlTag)pJson.push({'o':'dataTag','u':d3.json(me.urlTag)});
+            if(me.urlOrg)pJson.push({'o':'dataOrg','u':d3.json(me.urlOrg)});
+            if(me.urlActDocTag)pJson.push({'o':'dataActDocTag','u':d3.json(me.urlActDocTag)});
+            if(pJson.length){
+                Promise.all(pJson.map(p=>p.u)).then((values) => {
+                    values.forEach((v,i)=>{
+                        me[pJson[i].o]=v;
+                    })
+                });                
+            }
+    
         }
+        this.getActTagcloud = function () {
+            let dataTagcloud = []; 
+            me.dataAct.forEach(a=>{
+                let adt = me.dataActDocTag.filter(d=>d.act==a.id);
+                a.nb = adt.length;
+                for (let i = 0; i < a.nb; i++) {
+                    dataTagcloud.push({'nom':a.prenom+' '+a.nom});                    
+                }
+            })
+            return dataTagcloud;
+        }
+
         function getDataByRef(){
             if(me.showLoader)me.showLoader();
             me.dataAct = [];
@@ -47,7 +79,7 @@ export class dataHAL {
                             saveFile(JSON.stringify(me.dataAct),'dataHalAut.json');
                             saveFile(JSON.stringify(me.dataDoc),'dataHalDepot.json');
                             saveFile(JSON.stringify(me.dataTag),'dataHalKeyword.json');
-                            saveFile(JSON.stringify(me.dataOrg),'dataHalOrga.json');
+                            saveFile(JSON.stringify(me.dataOrg),'dataHalOrg.json');
                             saveFile(JSON.stringify(me.dataActDocTag),'dataHalAutDepKey.json');
                             /*
                             console.log(me.dataAct);

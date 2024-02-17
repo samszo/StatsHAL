@@ -18,13 +18,14 @@
     <script src="https://unpkg.com/compromise"></script>
     <script src="https://cdn.jsdelivr.net/npm/stopword/dist/stopword.umd.min.js"></script>
     <script src="assets/js/wordstream.v7.js"></script>
+    <script src="assets/js/d3.layout.cloud.js"></script>
     
     <link href="assets/css/bootstrap5.3.min.css" rel="stylesheet">
     <link href="assets/css/menu.css" rel="stylesheet">
     <link href="assets/css/all.min.css" rel="stylesheet">
     <link href="assets/css/handsontable.full.min.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
-
+    <link href="assets/css/nouislider.min.css" rel="stylesheet">
 
 </head>
 
@@ -107,6 +108,7 @@
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                               <button class="nav-link active" id="nav-wordstream-tab" data-bs-toggle="tab" data-bs-target="#nav-wordstream" type="button" role="tab" aria-controls="nav-wordstream" aria-selected="true">Flux des mots</button>
+                              <button class="nav-link" id="nav-tagcloud-tab" data-bs-toggle="tab" data-bs-target="#nav-tagcloud" type="button" role="tab" aria-controls="nav-tagcloud" aria-selected="true">Nuages mots</button>
                               <button class="nav-link" id="nav-worldMap-tab" data-bs-toggle="tab" data-bs-target="#nav-worldMap" type="button" role="tab" aria-controls="nav-worldMap" aria-selected="false">Collaborations mondiales</button>
                               <button class="nav-link" id="nav-franceMap-tab" data-bs-toggle="tab" data-bs-target="#nav-franceMap" type="button" role="tab" aria-controls="nav-franceMap" aria-selected="false">Collaborations françaises</button>
                             </div>
@@ -114,6 +116,9 @@
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-wordstream" role="tabpanel" aria-labelledby="nav-wordstream-tab" tabindex="0">
                                 <div id="canvasStream"></div>    
+                            </div>
+                            <div class="tab-pane fade show active" id="nav-tagcloud" role="tabpanel" aria-labelledby="nav-tagcloud-tab" tabindex="0">
+                                <div id="canvasTagcloud"></div>    
                             </div>
                             <div class="tab-pane fade" id="nav-worldMap" role="tabpanel" aria-labelledby="nav-worldMap-tab" tabindex="0">
                                 <div id="canvasWorldMap"></div>                                    
@@ -168,11 +173,13 @@
         import {mapWorld} from './modules/mapWorld.js';
         import {mapFrance} from './modules/mapFrance.js';
         import {appUrl} from './modules/appUrl.js';
-        import {dataHAL} from './modules/dataHAL.js';        
+        import {dataHAL} from './modules/dataHAL.js';     
+        import {tagcloud} from './modules/tagcloud.js';
+   
 
         let apiHAL="https://api.archives-ouvertes.fr/search", 
-            queryHAL = "", queryHALold = "", ws=false, wm = false,
-            dataRefs = [], 
+            queryHAL = "", queryHALold = "", ws=false, wm = false, tc=false,
+            dataRefs = [], rsHal,
             activeDiag = "nav-wordstream-tab",
             m=new modal({'size':'modal-lg'}), hotRes=false, hotDocs=false,
             rectFooter = d3.select('footer').node().getBoundingClientRect(),
@@ -217,8 +224,15 @@
             d3.select('#inpQueryLabel').node().value= d.label;            
             if(d.query)execQuery(d.query);
             if(d.csv){
-                let dtH = new dataHAL({'csv':d.csv});
+                rsHal = new dataHAL({'csv':d.csv
+                    ,'showLoader':showLoader,'hideLoader':hideLoader});
             }
+            if(d.urls){
+                d.urls.showLoader=showLoader;
+                d.urls.hideLoader=hideLoader;
+                rsHal = new dataHAL(d.urls);
+            }
+
         }
 
         function execQuery(q){
@@ -240,6 +254,15 @@
                     if(!ws || queryHALold != queryHAL){
                         ws = new streamWords({
                             'cont':d3.select('#canvasStream'),'urlData':queryHAL,
+                            'width':rectDiag.width,'height':rectDiag.height
+                        })
+                    }
+                    break;
+                case "nav-tagcloud-tab":
+                    if(!tc || queryHALold != queryHAL){
+                        tc = new tagcloud({
+                            'cont':d3.select('#canvasTagcloud'),
+                            'data':rsHal.getActTagcloud(),'keyTag':'nom',
                             'width':rectDiag.width,'height':rectDiag.height
                         })
                     }
