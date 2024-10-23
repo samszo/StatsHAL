@@ -1,11 +1,15 @@
+import {appUrl} from './appUrl.js';
+
 export class dataHAL {
     constructor(params) {
         var me = this;
+        this.data = params.data ? params.data : [];
         this.dataAct = [];
         this.dataDoc = [];
         this.dataTag = [];
         this.dataOrg = [];
         this.dataActDocTag = [];
+        this.urlData = params.urlData;
         this.urlAct = params.urlAct;
         this.urlDoc = params.urlDoc;
         this.urlTag = params.urlTag;
@@ -18,9 +22,25 @@ export class dataHAL {
         let apiHAL = "https://api.archives-ouvertes.fr/search",
             apiHALrefAut = "https://api.archives-ouvertes.fr/ref/author",
             apiHALrefAutStr = "https://api.archives-ouvertes.fr/search/authorstructure",
-            keys = [];
-    
+            keys = [],
+            fieldsHCERES = "+producedDateY_i:[2018+TO+2023]&wt=json&rows=100000&sort=producedDateY_i%20desc&fl=halId_s,title_s,authFullName_s,authLastName_s,authFirstName_s,producedDate_s,producedDateY_i,docType_s,peerReviewing_s,invitedCommunication_s,subTitle_s,bookTitle_s,journalTitle_s,volume_s,issue_s,page_s,publisher_s,doiId_s,uri_s,authorityInstitution_s,number_s,serie_s,conferenceTitle_s,city_s,country_s,conferenceStartDate_s,conferenceEndDate_s,lectureName_s,reportType_s,lectureType_s,submitType_s,openAccess_bool,wosId_s,pubmedId_s,audience_s,otherType_s,authQuality_s,authIdFullName_fs,popularLevel_s,authIdHasPrimaryStructure_fs,linkExtId_s,language_s,keyword_s,domainAllCode_s"
+            ;
+
         this.init = function () {
+            if(me.urlData){
+                let dateField= 'publicationDate_s',
+                pUrl = new appUrl({'url':new URL(me.urlData)}),
+                q = pUrl.params && pUrl.params.has('q') ? pUrl.params.get('q') : 'authIdHal_s:samuel-szoniecky',
+                fq = pUrl.params && pUrl.params.has('fq') ? "&fq="+pUrl.params.get('fq') : '',//'publicationDate_s:[2000 TO 2023]',
+                uri = "https://api.archives-ouvertes.fr/search/?q="+q+fq
+                    + "&rows=" + (pUrl.params.has('rows') ? +pUrl.params.get('rows') : "10000")
+                    +"&fl=authIdHal_s,keyword_s,title_s,docid,uri_s,producedDate_s,publicationDate_s"
+                    +"&sort="+dateField+" asc";
+                d3.json(uri).then(data=>{
+                    me.data = data.response.docs;
+                });                
+            }
+
             if(me.csv)getDataByRef();
             let pJson= [];
             if(me.urlAct)pJson.push({'o':'dataAct','u':d3.json(me.urlAct)});
@@ -49,6 +69,14 @@ export class dataHAL {
             return dataTagcloud;
         }
 
+        this.getKeywordTagcloud = function () {
+            let dataTagcloud = []; 
+            me.data.map(d=>d.keyword_s).forEach(kw=>{
+                if(kw)kw.forEach(w=>dataTagcloud.push({'word':w}));                    
+            })
+            return dataTagcloud;
+        }
+
         function getDataByRef(){
             if(me.showLoader)me.showLoader();
             me.dataAct = [];
@@ -59,7 +87,7 @@ export class dataHAL {
             d3.csv(me.csv).then(data=>{
                 let finData = data.length;
                 data.forEach((d,i) => {
-                    d3.json(apiHAL+"?q=halId_s:"+d.halId_s+me.fields).then(hal=>{
+                    d3.json(apiHAL+"?q=halId_s:"+d.halId_s+fieldsHCERES).then(hal=>{
                         hal.response.docs.forEach(ref=>{
                             for (let i = 0; i < ref.authLastName_s.length; i++) {
                                 let idAut = getKey(ref.authFirstName_s[i]+ref.authLastName_s[i],me.dataAct,

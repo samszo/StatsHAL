@@ -139,7 +139,7 @@
                     <img style="height: 40px;" src="assets/img/logo-paragraphe-blanc.svg"
                         alt="Laboratoire Paragraphe" />
                 </a>
-                <a target="_blank" href="https://github.com/samszo/HDR">
+                <a target="_blank" href="https://github.com/samszo/StatsHAL/">
                     <button type="button" class="btn btn-danger">
                         <i class="fa-brands fa-github fa-2xl"></i>
                     </button>
@@ -222,7 +222,9 @@
             showLoader();
             d3.select('#inpQuery').node().value= d.query;
             d3.select('#inpQueryLabel').node().value= d.label;            
-            if(d.query)execQuery(d.query);
+            if(d.query){
+                execQuery(d.query);
+            }
             if(d.csv){
                 rsHal = new dataHAL({'csv':d.csv
                     ,'showLoader':showLoader,'hideLoader':hideLoader});
@@ -241,7 +243,8 @@
             queryHAL = url;
             d3.json(queryHAL).then(data=>{
                 let cont = d3.select('#resultQuery');
-                cont.selectAll('div').remove()
+                cont.selectAll('div').remove();
+                rsHal = new dataHAL({'urlData':queryHAL,'showLoader':showLoader,'hideLoader':hideLoader});
                 setDiag();
                 setTable(data.response.docs,cont);
                 hideLoader();
@@ -262,7 +265,7 @@
                     if(!tc || queryHALold != queryHAL){
                         tc = new tagcloud({
                             'cont':d3.select('#canvasTagcloud'),
-                            'data':rsHal.getActTagcloud(),'keyTag':'nom',
+                            'data':rsHal.getKeywordTagcloud(),'keyTag':'word',
                             'width':rectDiag.width,'height':rectDiag.height
                         })
                     }
