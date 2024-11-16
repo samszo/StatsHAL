@@ -10,8 +10,9 @@
             "urlActDocTag":"assets/data/dataHalAutDepKey.json"
         }
     },    
-    {"label":"Publications de l'Axe DiNuPUMoC","query":"?q=authIdHal_s:(imad-saleh OR philippe-bootz OR everardo-reyes-garcia OR maria-ines-laitano OR hakim-hachour OR nicolas-sauret OR arnaud-laborderie OR samuel-szoniecky OR agonzalez58)&fq=publicationDateY_i:[2018 TO *]&rows=10000"},
+    {"label":"Publications de l'Axe DiNuPUMoC","query":"?q=authIdHal_s:(imad-saleh OR philippe-bootz OR everardo-reyes-garcia OR maria-ines-laitano OR hakim-hachour OR nicolas-sauret OR arnaud-laborderie OR samuel-szoniecky OR agonzalez58) OR authIdHal_i:953983&fq=publicationDateY_i:[2018 TO *]&rows=10000"},
     {"label":"Publications de Samuel Szoniecky","query":"?q=authIdHal_s:samuel-szoniecky&rows=10000&fl=authIdHal_s,keyword_s,title_s,docid,uri_s,producedDate_s,publicationDate_s&sort=publicationDate_s asc"},
     {"label":"Espaces sonores","query":"?q=espaces sonores&fq=publicationDateY_i:[2020 TO *]&rows=10000"},    
-    {"label":"Ecosystème de connaissances","query":"?q=écosystème de connaissances&fq=publicationDateY_i:[2020 TO *]&rows=10000"}    
+    {"label":"Ecosystème de connaissances","query":"?q=écosystème de connaissances&fq=publicationDateY_i:[2020 TO *]&rows=10000"},    
+    {"label":"Publications GENIC","query":"?q=localReference_s:GENIC"}    
 ]

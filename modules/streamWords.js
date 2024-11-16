@@ -19,13 +19,13 @@ export class streamWords {
         };
         let dataForVis = [], authors=[], words=[], svg,
             margins = {t:10,b:10,l:10,r:10},
-            dateField= 'publicationDate_s',
+            dateField= 'publicationDate_s', fieldAuthor = 'authFullName_s',//authIdHal_s
             pUrl = new appUrl({'url':new URL(me.urlData)}),
             q = pUrl.params && pUrl.params.has('q') ? pUrl.params.get('q') : 'authIdHal_s:samuel-szoniecky',
             fq = pUrl.params && pUrl.params.has('fq') ? "&fq="+pUrl.params.get('fq') : '',//'publicationDate_s:[2000 TO 2023]',
             uri = "https://api.archives-ouvertes.fr/search/?q="+q+fq
                 + "&rows=" + (pUrl.params.has('rows') ? +pUrl.params.get('rows') : "10000")
-                +"&fl=authIdHal_s,keyword_s,title_s,docid,uri_s,producedDate_s,publicationDate_s"
+                +"&fl=authIdHal_s,authFullName_s,keyword_s,title_s,docid,uri_s,producedDate_s,publicationDate_s"
                 +"&sort="+dateField+" asc";
         
         this.init = function () {
@@ -94,8 +94,8 @@ export class streamWords {
         }
         function getAuthors(d,o){
             let fi, frq = 6, k = o.date, a;
-            if(!d.authIdHal_s){
-                ka = 'No IdHal';
+            if(!d[fieldAuthor]){
+                ka = 'No Author';
                 fi = authors.findIndex(d=>d==ka);
                 if(fi<0){
                     authors.push(ka);
@@ -103,7 +103,7 @@ export class streamWords {
                 }
                 o.words['authors'].push({frequency: frq,id: k+"_"+ka+"_"+fi,text:ka,topic:'authors','d':d})
             }else{
-                d.authIdHal_s.forEach(ka=>{
+                d[fieldAuthor].forEach(ka=>{
                     a = o.words['authors'].filter(d=>d.text==ka);
                     if(a.length==0){
                         fi = authors.findIndex(d=>d==ka);
