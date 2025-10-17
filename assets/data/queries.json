@@ -14,5 +14,6 @@
     {"label":"Publications de Samuel Szoniecky","query":"?q=authIdHal_s:samuel-szoniecky&rows=10000&fl=authIdHal_s,keyword_s,title_s,docid,uri_s,producedDate_s,publicationDate_s&sort=publicationDate_s asc"},
     {"label":"Espaces sonores","query":"?q=espaces sonores&fq=publicationDateY_i:[2020 TO *]&rows=10000"},    
     {"label":"Ecosystème de connaissances","query":"?q=écosystème de connaissances&fq=publicationDateY_i:[2020 TO *]&rows=10000"},    
-    {"label":"Publications GENIC","query":"?q=localReference_s:GENIC"}    
+    {"label":"Publications GENIC","query":"?q=localReference_s:GENIC"},
+    {"label":"Publications H2PTM","query":"?q=collCode_s:H2PTM&rows=10000"}
 ]

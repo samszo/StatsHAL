@@ -474,14 +474,12 @@
                         let d = {};
                         while (++di < n) {
                             d = words[di];
-                            let w = d.width,
-                                h = d.height,
-                                x = d.x,
-                                y = d.y;
-                            let pixels = c.getImageData(d.x, d.y, d.width, d.height).data;
-                            d.sprite = Array();
-                            for (let i = 0; i << 2 < pixels.length; i++) {
-                                d.sprite.push(pixels[i << 2]);
+                            if(d.width>0&&d.height>0){
+                                let pixels = c.getImageData(d.x, d.y, d.width, d.height).data;
+                                d.sprite = Array();
+                                for (let i = 0; i << 2 < pixels.length; i++) {
+                                    d.sprite.push(pixels[i << 2]);
+                                }
                             }
                         }
                     });
