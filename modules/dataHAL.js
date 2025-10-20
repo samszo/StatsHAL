@@ -22,9 +22,7 @@ export class dataHAL {
         let apiHAL = "https://api.archives-ouvertes.fr/search",
             apiHALrefAut = "https://api.archives-ouvertes.fr/ref/author",
             apiHALrefAutStr = "https://api.archives-ouvertes.fr/search/authorstructure",
-            keys = [],
-            fieldsHCERES = "+producedDateY_i:[2018+TO+2023]&wt=json&rows=100000&sort=producedDateY_i%20desc&fl=halId_s,title_s,authFullName_s,authLastName_s,authFirstName_s,producedDate_s,producedDateY_i,docType_s,peerReviewing_s,invitedCommunication_s,subTitle_s,bookTitle_s,journalTitle_s,volume_s,issue_s,page_s,publisher_s,doiId_s,uri_s,authorityInstitution_s,number_s,serie_s,conferenceTitle_s,city_s,country_s,conferenceStartDate_s,conferenceEndDate_s,lectureName_s,reportType_s,lectureType_s,submitType_s,openAccess_bool,wosId_s,pubmedId_s,audience_s,otherType_s,authQuality_s,authIdFullName_fs,popularLevel_s,authIdHasPrimaryStructure_fs,linkExtId_s,language_s,keyword_s,domainAllCode_s"
-            ;
+            keys = [], dataCsv=[];
 
         this.init = function () {
             if(me.urlData){
@@ -85,42 +83,42 @@ export class dataHAL {
             me.dataTag = [];
             me.dataActDocTag = [];
             d3.csv(me.csv).then(data=>{
-                let finData = data.length;
-                data.forEach((d,i) => {
-                    d3.json(apiHAL+"?q=halId_s:"+d.halId_s+fieldsHCERES).then(hal=>{
-                        hal.response.docs.forEach(ref=>{
-                            for (let i = 0; i < ref.authLastName_s.length; i++) {
-                                let idAut = getKey(ref.authFirstName_s[i]+ref.authLastName_s[i],me.dataAct,
-                                    {'prenom':ref.authFirstName_s[i],'nom':ref.authLastName_s[i]}
-                                );
-                            }
-                            getKey(d.halId_s,me.dataDoc,
-                                {'idHal':d.halId_s,'titre':ref.title_s,'uri':ref.uri_s,'date':ref.publicationDate_s}
-                            );
-                            addDocActTag(ref,'keyword_s');
-                            addDocActTag(ref,'domainAllCode_s');
-                            addDocActTag(ref,'language_s');
-                            addDocActTag(ref,'submitType_s');
-                            addDocActTag(ref,'docType_s');                            
-                        })                        
-                        if(finData==(i+1)){
-                            saveFile(JSON.stringify(me.dataAct),'dataHalAut.json');
-                            saveFile(JSON.stringify(me.dataDoc),'dataHalDepot.json');
-                            saveFile(JSON.stringify(me.dataTag),'dataHalKeyword.json');
-                            saveFile(JSON.stringify(me.dataOrg),'dataHalOrg.json');
-                            saveFile(JSON.stringify(me.dataActDocTag),'dataHalAutDepKey.json');
-                            /*
-                            console.log(me.dataAct);
-                            console.log(me.dataDoc);
-                            console.log(me.dataTag);
-                            console.log(me.dataOrg);
-                            console.log(me.dataActDocTag);
-                            */
-                        }    
-                    })
-                });
-                if(me.hideLoader)me.hideLoader();
+                dataCsv = data;
+                getDataDoc(0);                
             })
+        }
+
+        async function getDataDoc(num){
+            let d = dataCsv[num],
+            hal = await d3.json(apiHAL+"?q=halId_s:"+d.halId_s+me.fields),
+            ref = hal.response.docs[0];
+            await getDataAut(0,ref);
+            getKey(d.halId_s,me.dataDoc,
+                {'idHal':d.halId_s,'titre':ref.title_s,'uri':ref.uri_s,'date':ref.publicationDate_s}
+            );
+            addDocActTag(ref,'keyword_s');
+            addDocActTag(ref,'domainAllCode_s');
+            addDocActTag(ref,'language_s');
+            addDocActTag(ref,'submitType_s');
+            addDocActTag(ref,'docType_s');                            
+            if(num<(dataCsv.length-1)){
+                getDataDoc(num+1);
+            }else{
+                if(me.hideLoader)me.hideLoader();
+                saveFile(JSON.stringify(me.dataAct),'dataHalAut.json');
+                saveFile(JSON.stringify(me.dataDoc),'dataHalDepot.json');
+                saveFile(JSON.stringify(me.dataTag),'dataHalKeyword.json');
+                saveFile(JSON.stringify(me.dataOrg),'dataHalOrg.json');
+                saveFile(JSON.stringify(me.dataActDocTag),'dataHalAutDocKey.json');                
+            }
+        }
+        async function getDataAut(i,ref){
+            let idAut = await getKey(ref.authFirstName_s[i]+ref.authLastName_s[i],me.dataAct,
+                {'prenom':ref.authFirstName_s[i],'nom':ref.authLastName_s[i]}
+            );
+            if(i<(ref.authLastName_s.length-1)){
+                await getDataAut(i+1,ref);
+            }   
         }
 
         function addDocActTag(data, champ){
@@ -129,34 +127,36 @@ export class dataHAL {
                     data[champ].forEach(tag=>{
                         data.authFirstName_s.forEach((n,i)=>{
                             if(!Array.isArray(tag)) tag=[tag];
-                            tag.forEach(t=>{
+                            tag.forEach(async t=>{
                                 me.dataActDocTag.push({
-                                    'doc':getKey(data.halId_s),
-                                    'act':getKey(data.authFirstName_s[i]+data.authLastName_s[i]),
-                                    'tag':getKey(champ+t,me.dataTag,{'type':champ,'val':t})
-                                });            
+                                    'doc':await getKey(data.halId_s),
+                                    'act':await getKey(data.authFirstName_s[i]+data.authLastName_s[i]),
+                                    'tag':await getKey(champ+t,me.dataTag,{'type':champ,'val':t})
+                                });
+                                //console.log('link added for '+data.halId_s+' / '+data.authFirstName_s[i]+data.authLastName_s[i]+' / '+t);        
                             })
                         })
                     })
                 } else {
-                    data.authFirstName_s.forEach((n,i)=>{
+                    data.authFirstName_s.forEach(async (n,i)=>{
                         me.dataActDocTag.push({
-                            'doc':getKey(data.halId_s),
-                            'act':getKey(data.authFirstName_s[i]+data.authLastName_s[i]),
-                            'tag':getKey(champ+data[champ],me.dataTag,{'type':champ,'val':data[champ]})
+                            'doc':await getKey(data.halId_s),
+                            'act':await getKey(data.authFirstName_s[i]+data.authLastName_s[i]),
+                            'tag':await getKey(champ+data[champ],me.dataTag,{'type':champ,'val':data[champ]})
                         });        
+                        //console.log('link added for '+data.halId_s+' / '+data.authFirstName_s[i]+data.authLastName_s[i]+' / '+t);        
                     })
                 }
             }
 
         }
 
-        function getKey(k,rs=false,r=false){
+        async function getKey(k,rs=false,r=false){
             if(keys[k]==undefined){
                 if(!r.id)r.id=rs.length;
                 rs.push(r);
                 if(rs==me.dataAct){
-                    addActInfos(r);
+                    await addActInfos(r);
                     /*pour éviter la surcharge
                     setTimeout(() => {
                         addActInfos(me.dataAct[idAut]);
@@ -202,7 +202,7 @@ export class dataHAL {
                     }else{
                         let o = str.response.result.org;
                         if(o.orgName){
-                            idStr = getKey(o.orgName.toString(),me.dataOrg,
+                            idStr = await getKey(o.orgName.toString(),me.dataOrg,
                                 {'desc':o.desc,'nom':o.orgName,'idOrg':o.idno}
                             );                    
                             rs.idsOrg.push(idStr);

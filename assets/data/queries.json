@@ -1,6 +1,13 @@
 [
     {"label":"Publications du Laboratoire Paragraphe","query":"?q=structId_i:(1087002 OR 1003467 OR 39850 OR 1172983)&rows=10000&fq=publicationDateY_i:[2018 TO *]"},
-    {"label":"Extractions des données HAL du Laboratoire Paragraphe","csv":"https://docs.google.com/spreadsheets/d/e/2PACX-1vTDhO04Reyb4XnBZpaoQ2x6IHeMA74J_YUcKXi_bDru3aSAxy5eK5Rv2zS8_GVZDSZyZSfHw2P1Apap/pub?gid=0&single=true&output=csv"},    
+    {"label":"Extractions des données HAL du Laboratoire Paragraphe",
+        "csv":"https://docs.google.com/spreadsheets/d/e/2PACX-1vTDhO04Reyb4XnBZpaoQ2x6IHeMA74J_YUcKXi_bDru3aSAxy5eK5Rv2zS8_GVZDSZyZSfHw2P1Apap/pub?gid=0&single=true&output=csv",
+        "fields":"+producedDateY_i:[2018+TO+2023]&wt=json&rows=100000&sort=producedDateY_i%20desc&fl=halId_s,title_s,authFullName_s,authLastName_s,authFirstName_s,producedDate_s,producedDateY_i,docType_s,peerReviewing_s,invitedCommunication_s,subTitle_s,bookTitle_s,journalTitle_s,volume_s,issue_s,page_s,publisher_s,doiId_s,uri_s,authorityInstitution_s,number_s,serie_s,conferenceTitle_s,city_s,country_s,conferenceStartDate_s,conferenceEndDate_s,lectureName_s,reportType_s,lectureType_s,submitType_s,openAccess_bool,wosId_s,pubmedId_s,audience_s,otherType_s,authQuality_s,authIdFullName_fs,popularLevel_s,authIdHasPrimaryStructure_fs,linkExtId_s,language_s,keyword_s,domainAllCode_s"
+    },    
+    {"label":"Extractions des données HAL de la collection H2PTM",
+        "csv":"assets/data/refHalH2PTM.csv",
+        "fields":"&wt=json&rows=100000&sort=producedDateY_i%20desc&fl=halId_s,title_s,authFullName_s,authLastName_s,authFirstName_s,producedDate_s,producedDateY_i,docType_s,peerReviewing_s,invitedCommunication_s,subTitle_s,bookTitle_s,journalTitle_s,volume_s,issue_s,page_s,publisher_s,doiId_s,uri_s,authorityInstitution_s,number_s,serie_s,conferenceTitle_s,city_s,country_s,conferenceStartDate_s,conferenceEndDate_s,lectureName_s,reportType_s,lectureType_s,submitType_s,openAccess_bool,wosId_s,pubmedId_s,audience_s,otherType_s,authQuality_s,authIdFullName_fs,popularLevel_s,authIdHasPrimaryStructure_fs,linkExtId_s,language_s,keyword_s,domainAllCode_s"
+    },    
     {"label":"Visualisation des données extraites de HAL pour Laboratoire Paragraphe",
         "urls":{
             "urlAct":"assets/data/dataHalAut.json",
