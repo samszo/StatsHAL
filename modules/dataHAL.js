@@ -19,6 +19,7 @@ export class dataHAL {
         this.csv = params.csv;
         this.showLoader = params.showLoader;
         this.hideLoader = params.hideLoader;
+        this.endLoadData = params.endLoadData ? params.endLoadData : false;
         let apiHAL = "https://api.archives-ouvertes.fr/search",
             apiHALrefAut = "https://api.archives-ouvertes.fr/ref/author",
             apiHALrefAutStr = "https://api.archives-ouvertes.fr/search/authorstructure",
@@ -51,6 +52,7 @@ export class dataHAL {
                     values.forEach((v,i)=>{
                         me[pJson[i].o]=v;
                     })
+                    if(params.endLoadData)params.endLoadData(me);
                 });                
             }
     
@@ -68,8 +70,8 @@ export class dataHAL {
         }
 
         this.getKeywordTagcloud = function () {
-            let dataTagcloud = []; 
-            me.data.map(d=>d.keyword_s).forEach(kw=>{
+            let dataTagcloud = [], dataSource = me.dataDoc ? me.dataDoc : me.data; 
+            dataSource.map(d=>d.keyword_s).forEach(kw=>{
                 if(kw)kw.forEach(w=>dataTagcloud.push({'word':w}));                    
             })
             return dataTagcloud;
@@ -94,7 +96,7 @@ export class dataHAL {
             ref = hal.response.docs[0];
             await getDataAut(0,ref);
             getKey(d.halId_s,me.dataDoc,
-                {'idHal':d.halId_s,'titre':ref.title_s,'uri':ref.uri_s,'date':ref.publicationDate_s}
+                {'idHal':d.halId_s,'titre':ref.title_s,'uri_s':ref.uri_s,'publicationDate_s':ref.publicationDate_s,'authIdHal_s':ref.authIdHal_s,'authFullName_s':ref.authFullName_s,'keyword_s':ref.keyword_s,'title_s':ref.title_s,'docid':ref.docid,'producedDate_s':ref.producedDate_s,'publicationDate_s':ref.publicationDate_s}
             );
             addDocActTag(ref,'keyword_s');
             addDocActTag(ref,'domainAllCode_s');
@@ -191,9 +193,9 @@ export class dataHAL {
             //d3.json(apiHALrefAutStr+"?lastName_t="+rs.nom+"&firstName_t="+rs.prenom).then(str=>{
                 if(str.response.result){
                     if(Array.isArray(str.response.result.org)){
-                        str.response.result.org.forEach(o=>{
+                        str.response.result.org.forEach(async o=>{
                             if(o.orgName){
-                                idStr = getKey(o.orgName.toString(),me.dataOrg,
+                                idStr = await getKey(o.orgName.toString(),me.dataOrg,
                                     {'desc':o.desc,'nom':o.orgName,'idOrg':o.idno}
                                 );                    
                                 rs.idsOrg.push(idStr);

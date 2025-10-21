@@ -232,6 +232,11 @@
             if(d.urls){
                 d.urls.showLoader=showLoader;
                 d.urls.hideLoader=hideLoader;
+                d.urls.endLoadData = function(o){
+                    rsHal = o;
+                    setTable(rsHal.dataDoc, d3.select('#resultQuery'));
+                    setDiag();
+                }
                 rsHal = new dataHAL(d.urls);
             }
 
@@ -256,6 +261,7 @@
                 case "nav-wordstream-tab":
                     if(!ws || queryHALold != queryHAL){
                         ws = new streamWords({
+                            'data':rsHal && rsHal.dataDoc ? rsHal.dataDoc : null,
                             'cont':d3.select('#canvasStream'),'urlData':queryHAL,
                             'width':rectDiag.width,'height':rectDiag.height
                         })

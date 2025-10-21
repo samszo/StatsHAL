@@ -19,14 +19,7 @@ export class streamWords {
         };
         let dataForVis = [], authors=[], words=[], svg,
             margins = {t:10,b:10,l:10,r:10},
-            dateField= 'publicationDate_s', fieldAuthor = 'authFullName_s',//authIdHal_s
-            pUrl = new appUrl({'url':new URL(me.urlData)}),
-            q = pUrl.params && pUrl.params.has('q') ? pUrl.params.get('q') : 'authIdHal_s:samuel-szoniecky',
-            fq = pUrl.params && pUrl.params.has('fq') ? "&fq="+pUrl.params.get('fq') : '',//'publicationDate_s:[2000 TO 2023]',
-            uri = "https://api.archives-ouvertes.fr/search/?q="+q+fq
-                + "&rows=" + (pUrl.params.has('rows') ? +pUrl.params.get('rows') : "10000")
-                +"&fl=authIdHal_s,authFullName_s,keyword_s,title_s,docid,uri_s,producedDate_s,publicationDate_s"
-                +"&sort="+dateField+" asc";
+            dateField= 'publicationDate_s', fieldAuthor = 'authFullName_s';
         
         this.init = function () {
             setData();
@@ -35,21 +28,38 @@ export class streamWords {
         function setData(){
             showLoader();       
             me.cont.select('svg').remove();
-            d3.json(uri).then(data=>{
-                console.log(data);
-                dataForVis = getDataForVis(data.response.docs);
-                let w = width-margins.l-margins.r, h = height - margins.t - margins.b;
-                me.cont
-                    .style("max-width", w + "px")
-                    .style("background-color","white");
-                svg = me.cont.append('svg').attr("id", "mainSVG")    
-                svg.attr("width", Math.max(120 * dataForVis.length, w))
-                svg.attr("height", Math.max(200 * Object.keys(dataForVis[0].words).length, h));
-            
-                wordstream(svg, dataForVis, config);
-                hideLoader();
-            
-            });            
+            if(me.data){
+                me.data.sort((a, b) => a[dateField].localeCompare(b[dateField]));
+                setVis();
+            }else{
+                let pUrl = new appUrl({'url':new URL(me.urlData)}),
+                    q = pUrl.params && pUrl.params.has('q') ? pUrl.params.get('q') : 'authIdHal_s:samuel-szoniecky',
+                    fq = pUrl.params && pUrl.params.has('fq') ? "&fq="+pUrl.params.get('fq') : '',//'publicationDate_s:[2000 TO 2023]',
+                    uri = "https://api.archives-ouvertes.fr/search/?q="+q+fq
+                        + "&rows=" + (pUrl.params.has('rows') ? +pUrl.params.get('rows') : "10000")
+                        +"&fl=authIdHal_s,authFullName_s,keyword_s,title_s,docid,uri_s,producedDate_s,publicationDate_s"
+                        +"&sort="+dateField+" asc";
+                d3.json(uri).then(data=>{
+                    console.log(data);            
+                    me.data = data.response.docs;
+                    setVis()
+                });            
+            }
+        }
+
+        function setVis(){
+            dataForVis = getDataForVis(me.data);
+            let w = width-margins.l-margins.r, h = height - margins.t - margins.b;
+            me.cont
+                .style("max-width", w + "px")
+                .style("background-color","white");
+            svg = me.cont.append('svg').attr("id", "mainSVG")    
+            svg.attr("width", Math.max(120 * dataForVis.length, w))
+            svg.attr("height", Math.max(200 * Object.keys(dataForVis[0].words).length, h));
+        
+            wordstream(svg, dataForVis, config);
+            hideLoader(true);
+
         }
 
         function getDataForVis(data){
