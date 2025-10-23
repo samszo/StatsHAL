@@ -23,6 +23,7 @@ export class dataHAL {
         let apiHAL = "https://api.archives-ouvertes.fr/search",
             apiHALrefAut = "https://api.archives-ouvertes.fr/ref/author",
             apiHALrefAutStr = "https://api.archives-ouvertes.fr/search/authorstructure",
+            apiHALrefStr = "https://api.archives-ouvertes.fr/ref/structure",
             keys = [], dataCsv=[];
 
         this.init = function () {
@@ -159,15 +160,35 @@ export class dataHAL {
                 rs.push(r);
                 if(rs==me.dataAct){
                     await addActInfos(r);
-                    /*pour éviter la surcharge
-                    setTimeout(() => {
-                        addActInfos(me.dataAct[idAut]);
-                    }, 1);
-                    */                                                    
                 }
                 keys[k]=rs.length-1;
             }
             return keys[k];
+        }
+
+        async function addOrgInfos(rs){
+            ///récupère les infos de la structure
+            let org = d3.json(apiHALrefStr+"?lastName_t="+rs.nom+"&fl=country_s,labStructAcronym_s,labStructName_s,labStructId_i,labStructCode_s,labStructCountry_s,labStructType_s,labStructCode_s");
+            if(org.response.result){
+                if(Array.isArray(str.response.result.org)){
+                    str.response.result.org.forEach(async o=>{
+                        if(o.orgName){
+                            let idStr = await getKey(o.orgName.toString(),me.dataOrg,
+                                {'desc':o.desc,'nom':o.orgName,'idOrg':o.idno}
+                            );                    
+                            rs.idsOrg.push(idStr);
+                        }
+                    })
+                }else{
+                    let o = str.response.result.org;
+                    if(o.orgName){
+                        let idStr = await getKey(o.orgName.toString(),me.dataOrg,
+                            {'desc':o.desc,'nom':o.orgName,'idOrg':o.idno}
+                        );                    
+                        rs.idsOrg.push(idStr);
+                    }
+                }
+            }
         }
         async function addActInfos(rs){
             /*récupère les infos de l'auteur
