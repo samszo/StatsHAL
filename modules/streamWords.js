@@ -28,7 +28,7 @@ export class streamWords {
         function setData(){
             showLoader();       
             me.cont.select('svg').remove();
-            if(me.data){
+            if(me.data && me.data.length>0){
                 me.data.sort((a, b) => a[dateField].localeCompare(b[dateField]));
                 setVis();
             }else{

@@ -157,39 +157,24 @@ export class dataHAL {
         async function getKey(k,rs=false,r=false){
             if(keys[k]==undefined){
                 if(!r.id)r.id=rs.length;
-                rs.push(r);
-                if(rs==me.dataAct){
-                    await addActInfos(r);
+                if(rs==me.dataOrg && k.indexOf('#')>-1){
+                    let org = await d3.json(apiHALrefStr+"?q=docid:"+k.replace('#struct-',''));
+                    rs.push({
+                        'nom':org.response.docs[0].label_s,
+                        'idOrg':k,
+                        'docid':org.response.docs[0].docid
+                        });
+                }else{
+                    rs.push(r);
+                    if(rs==me.dataAct){
+                        await addActInfos(r);
+                    }
                 }
                 keys[k]=rs.length-1;
             }
             return keys[k];
         }
 
-        async function addOrgInfos(rs){
-            ///récupère les infos de la structure
-            let org = d3.json(apiHALrefStr+"?lastName_t="+rs.nom+"&fl=country_s,labStructAcronym_s,labStructName_s,labStructId_i,labStructCode_s,labStructCountry_s,labStructType_s,labStructCode_s");
-            if(org.response.result){
-                if(Array.isArray(str.response.result.org)){
-                    str.response.result.org.forEach(async o=>{
-                        if(o.orgName){
-                            let idStr = await getKey(o.orgName.toString(),me.dataOrg,
-                                {'desc':o.desc,'nom':o.orgName,'idOrg':o.idno}
-                            );                    
-                            rs.idsOrg.push(idStr);
-                        }
-                    })
-                }else{
-                    let o = str.response.result.org;
-                    if(o.orgName){
-                        let idStr = await getKey(o.orgName.toString(),me.dataOrg,
-                            {'desc':o.desc,'nom':o.orgName,'idOrg':o.idno}
-                        );                    
-                        rs.idsOrg.push(idStr);
-                    }
-                }
-            }
-        }
         async function addActInfos(rs){
             /*récupère les infos de l'auteur
             d3.json(apiHALrefAut+"?q=fullName_t:"+rs.nom+"&fq=fullName_t:"+rs.nom+"&fq=firstName_t:"+rs.prenom+"&fl=*Id_s,idHal_s,docid").then(aut=>{
@@ -206,35 +191,86 @@ export class dataHAL {
             //récupère les infos de la structure
             let str, idStr = '';
             rs.idsOrg=[];
-            request.open("GET", apiHALrefAutStr+"?lastName_t="+rs.nom+"&firstName_t="+rs.prenom, false); // `false` makes the request synchronous
+            //ATTENTION on passe par l'xml car le json ne renvoie pas toutes les infos
+            request.open("GET", apiHALrefAutStr+"?wt=xml&lastName_t="+rs.nom+"&firstName_t="+rs.prenom, false); // `false` makes the request synchronous
             request.send(null);            
             if (request.status === 200) {
-                str=JSON.parse(request.responseText);
-            }            
-            //d3.json(apiHALrefAutStr+"?lastName_t="+rs.nom+"&firstName_t="+rs.prenom).then(str=>{
-                if(str.response.result){
-                    if(Array.isArray(str.response.result.org)){
-                        str.response.result.org.forEach(async o=>{
-                            if(o.orgName){
-                                idStr = await getKey(o.orgName.toString(),me.dataOrg,
-                                    {'desc':o.desc,'nom':o.orgName,'idOrg':o.idno}
-                                );                    
-                                rs.idsOrg.push(idStr);
-                            }
+                const result = parseXml(request.responseText).response.result;
+                if(result.org){
+                    if(Array.isArray(result.org)){
+                        result.org.forEach(async o=>{
+                            await setOrgInfos(o,rs);
                         })
                     }else{
-                        let o = str.response.result.org;
-                        if(o.orgName){
-                            idStr = await getKey(o.orgName.toString(),me.dataOrg,
-                                {'desc':o.desc,'nom':o.orgName,'idOrg':o.idno}
-                            );                    
-                            rs.idsOrg.push(idStr);
-                        }
+                        setOrgInfos(result.org,rs);
                     }
                 }
-            //});           
+            } 
+
         }
-               
+        async function setOrgInfos(o,rs) {
+            if(o['xml:id']){
+                let dt =                     {
+                        'nom':o.orgName[1] ? o.orgName[1]['#text'] : o.orgName['#text'],
+                        'docid':o['xml:id'].replace('struct-',''),
+                        'idOrg':o['xml:id'],
+                        'desc':o.orgName[1] ? o.orgName[0]['#text'] : '',
+                        'address':o.desc && o.desc.address && o.desc.address.addrLine && o.desc.address.addrLine['#text'] ? o.desc.address.addrLine['#text']:"",
+                        'country':o.desc && o.desc.address && o.desc.address.country ? o.desc.address.country.key : "",
+                        'relations':o.listRelation && o.listRelation.relation ? o.listRelation.relation : [],
+                        'idnos':o.idno ? o.idno : ''
+                    },
+                    idStr = await getKey(o['xml:id'],me.dataOrg,dt);
+                //récupère les relations
+                if(dt.relations && dt.relations.length){
+                    dt.relations.forEach(async rel=>{
+                        //on stocke les relations de structure avec # pour différencier avec les structures des auteurs qui n'ont pas de #
+                        await getKey(rel.active,me.dataOrg,rel);
+                    })
+                };
+                rs.idsOrg.push(idStr);
+            }
+        }
+
+        function parseXml(xml, arrayTags) {
+            let dom = null;
+            if (window.DOMParser) dom = (new DOMParser()).parseFromString(xml, "text/xml");
+            else if (window.ActiveXObject) {
+                dom = new ActiveXObject('Microsoft.XMLDOM');
+                dom.async = false;
+                if (!dom.loadXML(xml)) throw dom.parseError.reason + " " + dom.parseError.srcText;
+            }
+            else throw new Error("cannot parse xml string!");
+
+            function parseNode(xmlNode, result) {
+                if (xmlNode.nodeName == "#text") {
+                    let v = xmlNode.nodeValue;
+                    if (v.trim()) result['#text'] = v;
+                    return;
+                }
+
+                let jsonNode = {},
+                    existing = result[xmlNode.nodeName];
+                if (existing) {
+                    if (!Array.isArray(existing)) result[xmlNode.nodeName] = [existing, jsonNode];
+                    else result[xmlNode.nodeName].push(jsonNode);
+                }
+                else {
+                    if (arrayTags && arrayTags.indexOf(xmlNode.nodeName) != -1) result[xmlNode.nodeName] = [jsonNode];
+                    else result[xmlNode.nodeName] = jsonNode;
+                }
+
+                if (xmlNode.attributes) for (let attribute of xmlNode.attributes) jsonNode[attribute.nodeName] = attribute.nodeValue;
+
+                for (let node of xmlNode.childNodes) parseNode(node, jsonNode);
+            }
+
+            let result = {};
+            for (let node of dom.childNodes) parseNode(node, result);
+
+            return result;
+        }        
+
         function saveFile(fileContent,fileName){
             var bb = new Blob([fileContent ], { type: 'text/plain' });
             var a = document.createElement('a');
